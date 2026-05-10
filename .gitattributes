@@ -1,0 +1,25 @@
+# Force LF for all text/source files in the repo.
+# Working-tree line endings stay platform-native; only the stored form is normalized.
+* text=auto eol=lf
+
+# Windows scripts must stay CRLF or they break on Windows.
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# Unix scripts and Gradle wrapper must stay LF.
+*.sh    text eol=lf
+gradlew text eol=lf
+
+# Binaries — never convert.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.jar   binary
+*.aar   binary
+*.apk   binary
+*.aab   binary
+*.keystore binary
+*.jks   binary

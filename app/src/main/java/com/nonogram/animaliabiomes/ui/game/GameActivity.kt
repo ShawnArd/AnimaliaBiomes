@@ -1,7 +1,6 @@
 package com.nonogram.animaliabiomes.ui.game
 
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,7 +17,6 @@ class GameActivity : AppCompatActivity() {
     private val viewModel: GameViewModel by viewModels()
 
     private lateinit var gridView: PicrossGridView
-    private lateinit var paletteView: ColorPaletteView
     private lateinit var strikeViews: List<ImageView>
     private lateinit var tvPuzzleName: TextView
 
@@ -30,7 +28,6 @@ class GameActivity : AppCompatActivity() {
         val biomeId  = intent.getIntExtra(EXTRA_BIOME_ID, 1)
 
         gridView     = findViewById(R.id.picrossGridView)
-        paletteView  = findViewById(R.id.colorPaletteView)
         tvPuzzleName = findViewById(R.id.tvPuzzleName)
         strikeViews  = listOf(
             findViewById(R.id.ivStrike1),
@@ -54,18 +51,9 @@ class GameActivity : AppCompatActivity() {
             gridView.onCellTap       = viewModel::onCellTap
             gridView.onCellLongPress = viewModel::onCellLongPress
 
-            paletteView.palette = puzzle.palette
-            if (puzzle.palette.size <= 1) {
-                paletteView.visibility = View.GONE
-            } else {
-                paletteView.onColorSelected = viewModel::setSelectedColor
-            }
-
             viewModel.init(puzzle)
 
             viewModel.grid.observe(this@GameActivity) { gridView.grid = it }
-
-            viewModel.selectedColor.observe(this@GameActivity) { paletteView.selectedColorIndex = it }
 
             viewModel.strikes.observe(this@GameActivity) { count ->
                 strikeViews.forEachIndexed { i, view ->

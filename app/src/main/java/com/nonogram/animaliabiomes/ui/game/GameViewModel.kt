@@ -24,12 +24,8 @@ class GameViewModel : ViewModel() {
     private val _strikeFlash = MutableLiveData<Pair<Int, Int>?>(null)
     val strikeFlash: LiveData<Pair<Int, Int>?> = _strikeFlash
 
-    private val _selectedColor = MutableLiveData(1)
-    val selectedColor: LiveData<Int> = _selectedColor
-
     fun init(p: Puzzle) {
         puzzle = p
-        _selectedColor.value = 1
         reset()
     }
 
@@ -42,18 +38,12 @@ class GameViewModel : ViewModel() {
         _isComplete.value = false
     }
 
-    fun setSelectedColor(idx: Int) {
-        _selectedColor.value = idx
-    }
-
     fun onCellTap(row: Int, col: Int) {
         val current = _grid.value ?: return
         if (current[row][col] != CellState.Empty) return
 
         val solutionValue = puzzle.solution[row][col]
-        val selected = _selectedColor.value ?: 1
-
-        if (solutionValue != 0 && solutionValue == selected) {
+        if (solutionValue != 0) {
             _grid.value = current.mapIndexed { r, rowList ->
                 rowList.mapIndexed { c, cell ->
                     if (r == row && c == col) CellState.Filled(solutionValue) else cell
