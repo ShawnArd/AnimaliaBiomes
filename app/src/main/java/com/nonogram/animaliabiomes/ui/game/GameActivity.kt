@@ -1,6 +1,7 @@
 package com.nonogram.animaliabiomes.ui.game
 
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.nonogram.animaliabiomes.R
 import com.nonogram.animaliabiomes.data.OceanPuzzles
+import com.nonogram.animaliabiomes.data.ProgressManager
 
 class GameActivity : AppCompatActivity() {
 
@@ -34,6 +36,8 @@ class GameActivity : AppCompatActivity() {
             findViewById(R.id.ivStrike3)
         )
 
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener { finish() }
+
         tvPuzzleName.text = puzzle.name
         gridView.puzzle   = puzzle
 
@@ -52,21 +56,21 @@ class GameActivity : AppCompatActivity() {
 
         viewModel.strikeFlash.observe(this) { flash ->
             if (flash == null) return@observe
-            gridView.flashCell = flash
-            gridView.postDelayed({
-                gridView.flashCell = null
-                viewModel.clearStrikeFlash()
-                if ((viewModel.strikes.value ?: 0) >= 3) {
+            viewModel.clearStrikeFlash()
+            if ((viewModel.strikes.value ?: 0) >= 3) {
+                // Brief pause so the player sees the 3rd X before the reset
+                gridView.postDelayed({
                     viewModel.resetAfterThreeStrikes()
                     Toast.makeText(this, "3 strikes — puzzle reset!", Toast.LENGTH_SHORT).show()
-                }
-            }, 600)
+                }, 900)
+            }
         }
 
         viewModel.isComplete.observe(this) { complete ->
             if (complete) {
-                Toast.makeText(this, "Puzzle solved! 🎉", Toast.LENGTH_LONG).show()
-                // TODO: navigate to win/reveal screen
+                ProgressManager.markCompleted(this, puzzleId)
+                Toast.makeText(this, "Puzzle solved!", Toast.LENGTH_SHORT).show()
+                gridView.postDelayed({ finish() }, 1500)
             }
         }
     }

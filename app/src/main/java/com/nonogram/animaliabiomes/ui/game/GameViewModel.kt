@@ -51,16 +51,21 @@ class GameViewModel : ViewModel() {
             }
             checkWin()
         } else {
+            // Mark cell as incorrect permanently so the X stays visible
+            _grid.value = current.mapIndexed { r, rowList ->
+                rowList.mapIndexed { c, cell ->
+                    if (r == row && c == col) CellState.INCORRECT else cell
+                }
+            }
             val newStrikes = (_strikes.value ?: 0) + 1
             _strikes.value = newStrikes
             _strikeFlash.value = Pair(row, col)
-            // GameActivity delays then calls resetAfterStrike() if strikes == 3
         }
     }
 
     fun onCellLongPress(row: Int, col: Int) {
         val current = _grid.value ?: return
-        if (current[row][col] == CellState.FILLED) return
+        if (current[row][col] == CellState.FILLED || current[row][col] == CellState.INCORRECT) return
         _grid.value = current.mapIndexed { r, rowList ->
             rowList.mapIndexed { c, cell ->
                 if (r == row && c == col) {

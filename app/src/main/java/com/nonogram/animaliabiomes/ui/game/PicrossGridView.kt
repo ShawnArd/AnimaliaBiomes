@@ -15,12 +15,17 @@ class PicrossGridView @JvmOverloads constructor(
 ) : View(context, attrs) {
 
     var puzzle: Puzzle? = null
-        set(value) { field = value; requestLayout(); invalidate() }
+        set(value) {
+            field = value
+            value?.let {
+                filledPaint.color = it.cellColor
+                cluePaint.color   = it.cellColor
+            }
+            requestLayout()
+            invalidate()
+        }
 
     var grid: List<List<CellState>>? = null
-        set(value) { field = value; invalidate() }
-
-    var flashCell: Pair<Int, Int>? = null
         set(value) { field = value; invalidate() }
 
     var onCellTap: ((row: Int, col: Int) -> Unit)? = null
@@ -33,16 +38,21 @@ class PicrossGridView @JvmOverloads constructor(
         style = Paint.Style.FILL
     }
     private val emptyPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#ECF0F1")
+        color = Color.argb(200, 255, 255, 255)
         style = Paint.Style.FILL
     }
     private val markedPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.parseColor("#CFD8DC")
         style = Paint.Style.FILL
     }
-    private val flashPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#E53935")
+    private val incorrectPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.argb(200, 255, 255, 255)
         style = Paint.Style.FILL
+    }
+    private val incorrectXPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.parseColor("#E53935")
+        style = Paint.Style.STROKE
+        strokeCap = Paint.Cap.ROUND
     }
     private val gridLinePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.parseColor("#90A4AE")
@@ -111,20 +121,29 @@ class PicrossGridView @JvmOverloads constructor(
         val p = puzzle ?: return
         val size = p.gridSize
 
-        // Clue area = 25% of each dimension, minimum 72px
-        clueColWidth = (w * 0.25f).coerceAtLeast(72f)
-        clueRowHeight = (h * 0.25f).coerceAtLeast(72f)
+        val maxColClues = p.colClues.maxOf { it.size }
+        val maxRowClues = p.rowClues.maxOf { it.size }
 
-        val availW = w - clueColWidth
-        val availH = h - clueRowHeight
-        cellSize = minOf(availW / size, availH / size)
+        // Clue cells are the same size as grid cells.
+        // Total logical grid = (maxRowClues + size) cols × (maxColClues + size) rows.
+        cellSize = minOf(
+            w.toFloat() / (maxRowClues + size),
+            h.toFloat() / (maxColClues + size)
+        )
 
-        // Centre the grid in remaining space
-        gridLeft = clueColWidth + (availW - cellSize * size) / 2f
-        gridTop  = clueRowHeight + (availH - cellSize * size) / 2f
+        clueColWidth  = maxRowClues * cellSize
+        clueRowHeight = maxColClues * cellSize
 
-        cluePaint.textSize = (cellSize * 0.38f).coerceAtLeast(18f)
-        xPaint.strokeWidth = (cellSize * 0.1f).coerceAtLeast(4f)
+        val totalW = clueColWidth + cellSize * size
+        val totalH = clueRowHeight + cellSize * size
+
+        // Centre the whole layout (clues + grid) in the view
+        gridLeft = (w - totalW) / 2f + clueColWidth
+        gridTop  = (h - totalH) / 2f + clueRowHeight
+
+        cluePaint.textSize        = (cellSize * 0.45f).coerceAtLeast(14f)
+        xPaint.strokeWidth        = (cellSize * 0.1f).coerceAtLeast(4f)
+        incorrectXPaint.strokeWidth = (cellSize * 0.12f).coerceAtLeast(5f)
     }
 
     // ── Drawing ───────────────────────────────────────────────────────────────
@@ -141,13 +160,13 @@ class PicrossGridView @JvmOverloads constructor(
 
     private fun drawColumnClues(canvas: Canvas, p: Puzzle) {
         val size = p.gridSize
+        val lineSpacing = cluePaint.textSize * 1.4f
         for (col in 0 until size) {
             val clues = p.colClues[col]
             val cellCenterX = gridLeft + col * cellSize + cellSize / 2f
-            val totalLines = clues.size
-            val lineH = clueRowHeight / (totalLines + 1)
-            clues.forEachIndexed { i, num ->
-                val y = (i + 1) * lineH + cluePaint.textSize / 3f
+            // Bottom-align with tight spacing — last number sits just above the grid
+            clues.reversed().forEachIndexed { i, num ->
+                val y = gridTop - i * lineSpacing - lineSpacing / 2f + cluePaint.textSize / 3f
                 canvas.drawText(num.toString(), cellCenterX, y, cluePaint)
             }
         }
@@ -155,13 +174,13 @@ class PicrossGridView @JvmOverloads constructor(
 
     private fun drawRowClues(canvas: Canvas, p: Puzzle) {
         val size = p.gridSize
+        val colSpacing = cluePaint.textSize * 1.4f
         for (row in 0 until size) {
             val clues = p.rowClues[row]
             val cellCenterY = gridTop + row * cellSize + cellSize / 2f + cluePaint.textSize / 3f
-            val totalCols = clues.size
-            val colW = clueColWidth / (totalCols + 1)
-            clues.forEachIndexed { i, num ->
-                val x = (i + 1) * colW
+            // Right-align with tight spacing — last number sits just left of the grid
+            clues.reversed().forEachIndexed { i, num ->
+                val x = gridLeft - i * colSpacing - colSpacing / 2f
                 canvas.drawText(num.toString(), x, cellCenterY, cluePaint)
             }
         }
@@ -175,20 +194,25 @@ class PicrossGridView @JvmOverloads constructor(
                 val t = gridTop + row * cellSize + pad
                 val r = l + cellSize - pad * 2
                 val b = t + cellSize - pad * 2
+                val margin = cellSize * 0.2f
 
-                val isFlash = flashCell?.first == row && flashCell?.second == col
-                val paint = when {
-                    isFlash -> flashPaint
-                    g[row][col] == CellState.FILLED -> filledPaint
-                    g[row][col] == CellState.MARKED -> markedPaint
-                    else -> emptyPaint
-                }
-                canvas.drawRect(l, t, r, b, paint)
-
-                if (g[row][col] == CellState.MARKED) {
-                    val margin = cellSize * 0.2f
-                    canvas.drawLine(l + margin, t + margin, r - margin, b - margin, xPaint)
-                    canvas.drawLine(r - margin, t + margin, l + margin, b - margin, xPaint)
+                when (g[row][col]) {
+                    CellState.FILLED -> {
+                        canvas.drawRect(l, t, r, b, filledPaint)
+                    }
+                    CellState.MARKED -> {
+                        canvas.drawRect(l, t, r, b, markedPaint)
+                        canvas.drawLine(l + margin, t + margin, r - margin, b - margin, xPaint)
+                        canvas.drawLine(r - margin, t + margin, l + margin, b - margin, xPaint)
+                    }
+                    CellState.INCORRECT -> {
+                        canvas.drawRect(l, t, r, b, incorrectPaint)
+                        canvas.drawLine(l + margin, t + margin, r - margin, b - margin, incorrectXPaint)
+                        canvas.drawLine(r - margin, t + margin, l + margin, b - margin, incorrectXPaint)
+                    }
+                    CellState.EMPTY -> {
+                        canvas.drawRect(l, t, r, b, emptyPaint)
+                    }
                 }
             }
         }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Ocean wave -->
+    <path
+        android:fillColor="#42A5F5"
+        android:pathData="M0,62 Q27,42 54,62 Q81,82 108,62 L108,108 L0,108 Z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,74 Q27,54 54,74 Q81,94 108,74 L108,108 L0,108 Z"/>
+
+</vector>
