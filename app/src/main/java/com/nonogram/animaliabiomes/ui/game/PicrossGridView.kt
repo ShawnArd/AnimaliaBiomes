@@ -44,10 +44,6 @@ class PicrossGridView @JvmOverloads constructor(
     private val filledPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
     }
-    private val emptyPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.argb(200, 255, 255, 255)
-        style = Paint.Style.FILL
-    }
     private val markedPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.parseColor("#CFD8DC")
         style = Paint.Style.FILL
@@ -240,7 +236,7 @@ class PicrossGridView @JvmOverloads constructor(
                         canvas.drawLine(r - margin, t + margin, l + margin, b - margin, incorrectXPaint)
                     }
                     CellState.Empty -> {
-                        canvas.drawRect(l, t, r, b, emptyPaint)
+                        // Transparent — let the ocean background show through.
                     }
                 }
             }

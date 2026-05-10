@@ -18,28 +18,27 @@ object ClueCalculator {
     private fun lineClues(line: List<Int>): List<ColorClue> {
         val clues = mutableListOf<ColorClue>()
         var run = 0
-        var currentColor = 0
+        var firstColor = 0
+        var mixed = false
         for (cell in line) {
             if (cell == 0) {
                 if (run > 0) {
-                    clues.add(ColorClue(run, currentColor))
+                    clues.add(ColorClue(run, if (mixed) 0 else firstColor))
                     run = 0
-                    currentColor = 0
+                    firstColor = 0
+                    mixed = false
                 }
             } else {
-                if (cell == currentColor) {
-                    run++
-                } else {
-                    if (run > 0) {
-                        clues.add(ColorClue(run, currentColor))
-                    }
-                    currentColor = cell
-                    run = 1
+                run++
+                if (firstColor == 0) {
+                    firstColor = cell
+                } else if (cell != firstColor) {
+                    mixed = true
                 }
             }
         }
         if (run > 0) {
-            clues.add(ColorClue(run, currentColor))
+            clues.add(ColorClue(run, if (mixed) 0 else firstColor))
         }
         return if (clues.isEmpty()) listOf(ColorClue(0, 0)) else clues
     }

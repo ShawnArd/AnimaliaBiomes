@@ -28,25 +28,20 @@ class ClueCalculatorTest {
     }
 
     @Test
-    fun twoDifferentColorsNoGap() {
+    fun twoDifferentColorsNoGapMergeIntoOne() {
+        // Adjacent runs of different colors merge into a single length clue.
         val solution = listOf(listOf(1, 1, 2, 2, 0))
         val clues = ClueCalculator.rowClues(solution)
-        assertEquals(listOf(listOf(ColorClue(2, 1), ColorClue(2, 2))), clues)
+        assertEquals(listOf(listOf(ColorClue(4, 0))), clues)
     }
 
     @Test
-    fun mixedFullRow() {
+    fun mixedFullRowGapsSeparateButColorsMerge() {
+        // The gap (0) splits, mixed colors within each segment merge.
         val solution = listOf(listOf(1, 2, 0, 2, 1))
         val clues = ClueCalculator.rowClues(solution)
         assertEquals(
-            listOf(
-                listOf(
-                    ColorClue(1, 1),
-                    ColorClue(1, 2),
-                    ColorClue(1, 2),
-                    ColorClue(1, 1)
-                )
-            ),
+            listOf(listOf(ColorClue(2, 0), ColorClue(2, 0))),
             clues
         )
     }
@@ -76,7 +71,8 @@ class ClueCalculatorTest {
     }
 
     @Test
-    fun colCluesWalkThreeColors() {
+    fun colCluesWalkThreeColorsMerge() {
+        // 5-cell column with 3 colors and no gaps merges into one clue.
         val solution = listOf(
             listOf(1),
             listOf(1),
@@ -85,20 +81,12 @@ class ClueCalculatorTest {
             listOf(3)
         )
         val clues = ClueCalculator.colClues(solution)
-        assertEquals(
-            listOf(
-                listOf(
-                    ColorClue(2, 1),
-                    ColorClue(1, 2),
-                    ColorClue(2, 3)
-                )
-            ),
-            clues
-        )
+        assertEquals(listOf(listOf(ColorClue(5, 0))), clues)
     }
 
     @Test
     fun threeDifferentColorsMixedWithGaps() {
+        // Gaps separate runs; within a single-color run the color is preserved.
         val solution = listOf(listOf(1, 0, 2, 2, 0, 3, 0, 1))
         val clues = ClueCalculator.rowClues(solution)
         assertEquals(
@@ -115,20 +103,9 @@ class ClueCalculatorTest {
     }
 
     @Test
-    fun threeDifferentColorsMixedNoGaps() {
+    fun threeDifferentColorsMixedNoGapsMergeIntoOne() {
         val solution = listOf(listOf(1, 2, 3, 1, 2))
         val clues = ClueCalculator.rowClues(solution)
-        assertEquals(
-            listOf(
-                listOf(
-                    ColorClue(1, 1),
-                    ColorClue(1, 2),
-                    ColorClue(1, 3),
-                    ColorClue(1, 1),
-                    ColorClue(1, 2)
-                )
-            ),
-            clues
-        )
+        assertEquals(listOf(listOf(ColorClue(5, 0))), clues)
     }
 }

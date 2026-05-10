@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Animalia Biomes — Puzzle Editor</title>
+<style>
+  :root {
+    --ocean-deep: #1A237E;
+    --ocean-mid: #1565C0;
+    --ocean-light: #42A5F5;
+    --bg: #F5F6FA;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 24px;
+    color: #212121;
+  }
+  h1 {
+    color: var(--ocean-deep);
+    margin-top: 0;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .col { flex: 1; min-width: 280px; }
+  label { display: block; margin: 8px 0 4px; font-size: 13px; font-weight: 600; }
+  input[type="text"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  textarea { resize: vertical; min-height: 60px; }
+  .palette-list {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 8px 0 24px;
+  }
+  .palette-item { text-align: center; }
+  .palette-item input[type="color"] {
+    width: 36px; height: 28px; border: none; cursor: pointer; background: none; padding: 0;
+    margin-top: 4px;
+  }
+  .swatch {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .swatch.selected {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--ocean-mid);
+  }
+  .swatch.empty {
+    background: white;
+    background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%),
+                      linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%);
+    background-size: 12px 12px;
+    background-position: 0 0, 6px 6px;
+  }
+  .palette-key {
+    font-size: 11px; color: #555; margin-top: 2px; font-weight: 600;
+  }
+  .add-color {
+    width: 36px; height: 36px; border: 2px dashed #888; border-radius: 50%;
+    background: white; cursor: pointer; color: #888;
+    font-size: 22px; line-height: 32px; padding: 0;
+  }
+  button {
+    padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;
+    font-size: 14px; font-weight: 600;
+  }
+  button.primary { background: var(--ocean-mid); color: white; }
+  button.secondary { background: white; border: 1px solid #888; color: #555; }
+  .toolbar { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+  #grid-section {
+    display: inline-block;
+    padding: 12px;
+    background: linear-gradient(180deg, #0D47A1 0%, #1565C0 60%, #1E88E5 100%);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 12px;
+  }
+  .grid-row { display: flex; gap: 1px; }
+  .grid-row + .grid-row { margin-top: 1px; }
+  .cell {
+    width: 32px; height: 32px;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-sizing: border-box;
+    user-select: none;
+  }
+  .cell:hover { outline: 2px solid #FFEB3B; outline-offset: -1px; z-index: 1; }
+  .clue-cell {
+    width: 32px; height: 32px;
+    color: #FFFFFF; font-weight: 700; font-size: 12px;
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    line-height: 1.1;
+    background: transparent;
+  }
+  .clue-cell.row {
+    flex-direction: row; gap: 4px;
+    width: auto; padding: 0 4px;
+    justify-content: flex-end;
+    min-width: 32px;
+  }
+  .clue-num { display: inline-block; }
+  pre {
+    background: #2c2c2c;
+    color: #e0e0e0;
+    padding: 12px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 13px;
+    max-height: 320px;
+  }
+  .help-text { font-size: 12px; color: #666; margin-top: 4px; }
+  .tip {
+    background: #FFF8E1;
+    border-left: 3px solid #FFC107;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .tip strong { color: #5D4037; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Animalia Biomes — Puzzle Editor</h1>
+  <p class="help-text">Click cells to fill with the selected palette color. Right-click (or shift-click) to erase.</p>
+
+  <div class="row">
+    <div class="col">
+      <label>Animal name</label>
+      <input type="text" id="name" placeholder="e.g. Seagull">
+
+      <label>Fun fact</label>
+      <textarea id="funfact" placeholder="A short interesting fact about this animal"></textarea>
+
+      <label>Stage</label>
+      <select id="stage">
+        <option value="Shores" data-size="5">Shores (5×5)</option>
+        <option value="Shallows" data-size="10">Shallows (10×10)</option>
+        <option value="Depths" data-size="15">Depths (15×15)</option>
+        <option value="Open Ocean" data-size="20">Open Ocean (20×20)</option>
+      </select>
+
+      <label>Puzzle ID (unique within biome)</label>
+      <input type="number" id="puzzle-id" value="1">
+    </div>
+
+    <div class="col">
+      <label>Palette</label>
+      <div class="palette-list" id="palette-list"></div>
+      <p class="help-text">
+        Click swatch to select active fill color. Click <strong>+</strong> to add a color.
+        Right-click a swatch to delete it. The "erase" swatch (checkered) clears cells.
+      </p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>5×5 design tips:</strong> stick to iconic silhouettes — strip the animal to
+    its most recognizable feature (claws, wings, shell). Symmetry helps recognition. If
+    you can't tell what it is by squinting, simplify further. Avoid empty rows when
+    possible — they show as "0" in the clue track.
+  </div>
+
+  <div class="toolbar">
+    <button class="primary" onclick="exportJSON()">Copy JSON to clipboard</button>
+    <button class="secondary" onclick="clearGrid()">Clear grid</button>
+    <button class="secondary" onclick="loadFromJSON()">Load JSON…</button>
+  </div>
+
+  <div id="grid-section"></div>
+
+  <h3>JSON output (paste into <code>ocean.json</code>'s puzzles array)</h3>
+  <pre id="json-output"></pre>
+</div>
+
+<script>
+'use strict';
+
+let size = 5;
+let palette = [{ key: 'O', hex: '#F57C00' }];
+let selectedKey = 'O';
+let grid = [];
+
+function init() {
+  resetGrid();
+  renderPalette();
+  renderGrid();
+  updateJSON();
+
+  document.getElementById('stage').addEventListener('change', onStageChange);
+  document.getElementById('name').addEventListener('input', updateJSON);
+  document.getElementById('funfact').addEventListener('input', updateJSON);
+  document.getElementById('puzzle-id').addEventListener('input', updateJSON);
+}
+
+function onStageChange() {
+  const opt = document.getElementById('stage').selectedOptions[0];
+  size = parseInt(opt.dataset.size);
+  resetGrid();
+  renderGrid();
+  updateJSON();
+}
+
+function resetGrid() {
+  grid = Array.from({length: size}, () => Array.from({length: size}, () => '.'));
+}
+
+function clearGrid() {
+  resetGrid();
+  renderGrid();
+  updateJSON();
+}
+
+// ── Palette ──────────────────────────────────────────────────────────────────
+
+function renderPalette() {
+  const list = document.getElementById('palette-list');
+  list.innerHTML = '';
+
+  palette.forEach((c, i) => {
+    const item = document.createElement('div');
+    item.className = 'palette-item';
+    const sw = document.createElement('div');
+    sw.className = 'swatch' + (c.key === selectedKey ? ' selected' : '');
+    sw.style.background = c.hex;
+    sw.onclick = () => selectColor(c.key);
+    sw.oncontextmenu = (e) => { e.preventDefault(); deleteColor(c.key); };
+    item.appendChild(sw);
+
+    const colorInput = document.createElement('input');
+    colorInput.type = 'color';
+    colorInput.value = c.hex;
+    colorInput.onchange = () => updateColor(i, colorInput.value);
+    item.appendChild(colorInput);
+
+    const keyLabel = document.createElement('div');
+    keyLabel.className = 'palette-key';
+    keyLabel.textContent = c.key;
+    item.appendChild(keyLabel);
+
+    list.appendChild(item);
+  });
+
+  // Erase swatch
+  const eraseItem = document.createElement('div');
+  eraseItem.className = 'palette-item';
+  const eraseSw = document.createElement('div');
+  eraseSw.className = 'swatch empty' + (selectedKey === '.' ? ' selected' : '');
+  eraseSw.onclick = () => selectColor('.');
+  eraseSw.title = 'Erase';
+  eraseItem.appendChild(eraseSw);
+  const eraseSpacer = document.createElement('div');
+  eraseSpacer.style.height = '32px';
+  eraseItem.appendChild(eraseSpacer);
+  const eraseLabel = document.createElement('div');
+  eraseLabel.className = 'palette-key';
+  eraseLabel.textContent = 'erase';
+  eraseItem.appendChild(eraseLabel);
+  list.appendChild(eraseItem);
+
+  // Add button
+  if (palette.length < 8) {
+    const addItem = document.createElement('div');
+    addItem.className = 'palette-item';
+    const btn = document.createElement('button');
+    btn.className = 'add-color';
+    btn.textContent = '+';
+    btn.onclick = addColor;
+    addItem.appendChild(btn);
+    list.appendChild(addItem);
+  }
+}
+
+function selectColor(key) { selectedKey = key; renderPalette(); }
+
+function updateColor(idx, hex) {
+  palette[idx].hex = hex;
+  renderPalette();
+  renderGrid();
+  updateJSON();
+}
+
+function deleteColor(key) {
+  if (palette.length === 1) { alert('Need at least 1 color in palette.'); return; }
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (grid[r][c] === key) grid[r][c] = '.';
+    }
+  }
+  palette = palette.filter(c => c.key !== key);
+  if (selectedKey === key) selectedKey = palette[0].key;
+  renderPalette();
+  renderGrid();
+  updateJSON();
+}
+
+function addColor() {
+  const used = new Set(palette.map(c => c.key));
+  const candidates = 'KWBRYGPVLNAESDIFTHCJMQUXZ'.split('');
+  const newKey = candidates.find(k => !used.has(k));
+  if (!newKey) { alert('Out of single-letter keys.'); return; }
+  palette.push({ key: newKey, hex: '#888888' });
+  selectedKey = newKey;
+  renderPalette();
+  updateJSON();
+}
+
+function paletteByKey(key) { return palette.find(c => c.key === key); }
+
+// ── Grid + clues ─────────────────────────────────────────────────────────────
+
+function computeLineClues(line) {
+  const clues = [];
+  let count = 0;
+  let firstColor = null;
+  let mixed = false;
+
+  for (const ch of line) {
+    if (ch === '.') {
+      if (count > 0) {
+        clues.push({ count, color: mixed ? null : firstColor });
+        count = 0; firstColor = null; mixed = false;
+      }
+    } else {
+      count++;
+      if (firstColor === null) firstColor = ch;
+      else if (ch !== firstColor) mixed = true;
+    }
+  }
+  if (count > 0) clues.push({ count, color: mixed ? null : firstColor });
+  if (clues.length === 0) return [{ count: 0, color: '.' }];
+  return clues;
+}
+
+function computeAllRowClues() { return grid.map(r => computeLineClues(r)); }
+function computeAllColClues() {
+  return Array.from({length: size}, (_, c) => computeLineClues(grid.map(r => r[c])));
+}
+
+function renderGrid() {
+  const section = document.getElementById('grid-section');
+  section.innerHTML = '';
+
+  const rowClues = computeAllRowClues();
+  const colClues = computeAllColClues();
+  const maxColDepth = Math.max(...colClues.map(c => c.length));
+  const maxRowWidth = Math.max(...rowClues.map(c => c.length));
+
+  // Top column-clues block
+  for (let depth = 0; depth < maxColDepth; depth++) {
+    const row = document.createElement('div');
+    row.className = 'grid-row';
+
+    for (let i = 0; i < maxRowWidth; i++) {
+      const filler = document.createElement('div');
+      filler.className = 'clue-cell';
+      row.appendChild(filler);
+    }
+
+    for (let c = 0; c < size; c++) {
+      const clues = colClues[c];
+      const cell = document.createElement('div');
+      cell.className = 'clue-cell';
+      const idx = depth - (maxColDepth - clues.length);
+      if (idx >= 0 && idx < clues.length) {
+        const cl = clues[idx];
+        const span = document.createElement('span');
+        span.textContent = cl.count;
+        span.style.color = paletteByKey(cl.color)?.hex || '#FFFFFF';
+        cell.appendChild(span);
+      }
+      row.appendChild(cell);
+    }
+    section.appendChild(row);
+  }
+
+  // Grid rows
+  for (let r = 0; r < size; r++) {
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'grid-row';
+
+    const clues = rowClues[r];
+    for (let i = 0; i < maxRowWidth; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'clue-cell';
+      const idx = i - (maxRowWidth - clues.length);
+      if (idx >= 0 && idx < clues.length) {
+        const cl = clues[idx];
+        const span = document.createElement('span');
+        span.textContent = cl.count;
+        span.style.color = paletteByKey(cl.color)?.hex || '#FFFFFF';
+        cell.appendChild(span);
+      }
+      rowDiv.appendChild(cell);
+    }
+
+    for (let c = 0; c < size; c++) {
+      const cd = document.createElement('div');
+      cd.className = 'cell';
+      const ch = grid[r][c];
+      cd.style.background = ch === '.' ? 'transparent' : (paletteByKey(ch)?.hex || 'transparent');
+      cd.onclick = (e) => {
+        if (e.shiftKey) grid[r][c] = '.';
+        else grid[r][c] = selectedKey;
+        renderGrid(); updateJSON();
+      };
+      cd.oncontextmenu = (e) => {
+        e.preventDefault();
+        grid[r][c] = '.';
+        renderGrid(); updateJSON();
+      };
+      rowDiv.appendChild(cd);
+    }
+    section.appendChild(rowDiv);
+  }
+}
+
+// ── Export ───────────────────────────────────────────────────────────────────
+
+function updateJSON() {
+  const id = parseInt(document.getElementById('puzzle-id').value) || 1;
+  const name = document.getElementById('name').value || 'Untitled';
+  const funFact = document.getElementById('funfact').value || '';
+
+  const usedKeys = new Set();
+  for (const row of grid) for (const ch of row) if (ch !== '.') usedKeys.add(ch);
+  const usedPalette = palette.filter(c => usedKeys.has(c.key));
+  const paletteObj = {};
+  for (const c of usedPalette) paletteObj[c.key] = c.hex;
+
+  const data = {
+    id, name, size, funFact,
+    palette: paletteObj,
+    solution: grid.map(row => row.join(''))
+  };
+  document.getElementById('json-output').textContent = JSON.stringify(data, null, 2);
+}
+
+function exportJSON() {
+  const text = document.getElementById('json-output').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('JSON copied to clipboard.\n\nPaste it into the matching stage\'s "puzzles" array in app/src/main/assets/puzzles/ocean.json.');
+  });
+}
+
+function loadFromJSON() {
+  const text = prompt('Paste a puzzle JSON to load:');
+  if (!text) return;
+  try {
+    const data = JSON.parse(text);
+    if (data.size) size = data.size;
+    if (data.palette) {
+      palette = Object.entries(data.palette).map(([key, hex]) => ({ key, hex }));
+      selectedKey = palette[0]?.key || 'O';
+    }
+    if (data.solution) {
+      grid = data.solution.map(rowStr => rowStr.split(''));
+    }
+    document.getElementById('name').value = data.name || '';
+    document.getElementById('funfact').value = data.funFact || '';
+    document.getElementById('puzzle-id').value = data.id || 1;
+
+    const stageSel = document.getElementById('stage');
+    for (const opt of stageSel.options) {
+      if (parseInt(opt.dataset.size) === size) stageSel.value = opt.value;
+    }
+
+    renderPalette();
+    renderGrid();
+    updateJSON();
+  } catch (e) {
+    alert('Invalid JSON: ' + e.message);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
