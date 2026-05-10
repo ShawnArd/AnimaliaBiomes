@@ -20,8 +20,16 @@ The following are **design decisions** owned by the user. Surface concerns, prop
 - **Puzzle solutions** in `app/src/main/assets/puzzles/*.json` — the pixel art itself.
 - **Palette colors** chosen for any animal, even if contrast seems poor.
 - **Fun facts**, animal names, stage names ("Shores", "Shallows", "Depths", "Open Ocean").
-- **Game rules**: 3-strike reset, 75% stage unlock threshold, merged-clue rule (adjacent cells of any colors count as one clue), tap-to-fill / long-press-to-mark, no hint system.
-- **Visual decisions**: ocean gradient background, transparent empty cells, lock icon style, tooltip behavior, contrast adjustments.
+- **Game rules**: 3-strike reset, 75% stage unlock threshold, merged-clue rule (adjacent cells of any colors count as one clue), tap-to-fill / long-press-to-mark, no hint system, **no color picker** (player taps any cell; the game auto-fills with the correct color from the solution).
+- **Clue text color**: hint numbers around the grid stay **black** (`#212121`) for *all* puzzles regardless of palette. Don't tint clues to match palette colors. Filled cells use palette colors; clues do not.
+- **Minimum palette colors per puzzle size**:
+  - `5×5` (Shores) — 1+ colors
+  - `10×10` (Shallows) — **2+ colors required**
+  - `15×15` (Depths) — **3+ colors required**
+  - `20×20` (Open Ocean) — **3+ colors required**
+
+  Enforced in `PuzzleSerializer` so authoring violations fail at parse time. Larger grids carry richer detail; the palette minimums prevent visually-flat designs at higher difficulty.
+- **Visual decisions**: ocean gradient background, transparent empty cells AND transparent incorrect cells (only the red X is drawn for incorrect), lock icon style, tooltip behavior, contrast adjustments.
 - **Schema choices**: keyed palette + string-row solution format, schema versioning policy.
 
 If a change to any of the above seems necessary (e.g., a critique flags a real bug), ask first.

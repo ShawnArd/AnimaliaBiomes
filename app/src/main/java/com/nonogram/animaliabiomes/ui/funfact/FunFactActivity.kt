@@ -3,6 +3,7 @@ package com.nonogram.animaliabiomes.ui.funfact
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,8 @@ class FunFactActivity : AppCompatActivity() {
 
         val puzzleId = intent.getIntExtra(EXTRA_PUZZLE_ID, 1)
         val biomeId  = intent.getIntExtra(EXTRA_BIOME_ID, 1)
+
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener { finish() }
 
         lifecycleScope.launch {
             val puzzle = Repositories.puzzles(this@FunFactActivity).getPuzzle(biomeId, puzzleId)

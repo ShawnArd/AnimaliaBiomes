@@ -5,6 +5,7 @@ import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.Gravity
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -30,6 +31,8 @@ class PuzzleListActivity : AppCompatActivity() {
 
         biomeId = intent.getIntExtra(EXTRA_BIOME_ID, 1)
         stageId = intent.getIntExtra(EXTRA_STAGE_ID, 1)
+
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener { finish() }
 
         lifecycleScope.launch {
             val stage = Repositories.puzzles(this@PuzzleListActivity).getStage(biomeId, stageId)

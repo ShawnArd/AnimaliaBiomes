@@ -17,6 +17,12 @@ object PuzzleSerializer {
     private const val MAX_GRID_SIZE = 40
     private val HEX_COLOR_REGEX = Regex("^#[0-9A-Fa-f]{6}$")
 
+    private fun minPaletteColorsFor(gridSize: Int): Int = when {
+        gridSize >= 15 -> 3
+        gridSize >= 10 -> 2
+        else           -> 1
+    }
+
     private val gson = Gson()
 
     fun loadBiome(json: String): Biome {
@@ -266,6 +272,13 @@ object PuzzleSerializer {
             )
         }
 
+        val minColors = minPaletteColorsFor(psize)
+        if (ppalette.size < minColors) {
+            throw PuzzleValidationException(
+                "$context requires at least $minColors palette colors for size $psize×$psize (has ${ppalette.size})"
+            )
+        }
+
         val parsedPalette = ppalette.mapIndexed { index, hex ->
             parseHexColor(hex, "$context palette[$index]")
         }
@@ -313,6 +326,12 @@ object PuzzleSerializer {
         )
         if (ppalette.isEmpty()) {
             throw PuzzleValidationException("$context has no palette colors")
+        }
+        val minColors = minPaletteColorsFor(psize)
+        if (ppalette.size < minColors) {
+            throw PuzzleValidationException(
+                "$context requires at least $minColors palette colors for size $psize×$psize (has ${ppalette.size})"
+            )
         }
         val psolution = solution ?: throw PuzzleValidationException(
             "$context is missing required field 'solution'"

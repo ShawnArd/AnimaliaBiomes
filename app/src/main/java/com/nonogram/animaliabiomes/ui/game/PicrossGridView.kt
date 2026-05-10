@@ -48,10 +48,6 @@ class PicrossGridView @JvmOverloads constructor(
         color = Color.parseColor("#CFD8DC")
         style = Paint.Style.FILL
     }
-    private val incorrectPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.argb(200, 255, 255, 255)
-        style = Paint.Style.FILL
-    }
     private val incorrectXPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.parseColor("#E53935")
         style = Paint.Style.STROKE
@@ -174,7 +170,6 @@ class PicrossGridView @JvmOverloads constructor(
             val cellCenterX = gridLeft + col * cellSize + cellSize / 2f
             clues.reversed().forEachIndexed { i, clue ->
                 val y = gridTop - i * lineSpacing - lineSpacing / 2f + cluePaint.textSize / 3f
-                cluePaint.color = displayColorFor(resolveClueColor(p, clue.colorIndex))
                 canvas.drawText(clue.count.toString(), cellCenterX, y, cluePaint)
             }
         }
@@ -188,25 +183,9 @@ class PicrossGridView @JvmOverloads constructor(
             val cellCenterY = gridTop + row * cellSize + cellSize / 2f + cluePaint.textSize / 3f
             clues.reversed().forEachIndexed { i, clue ->
                 val x = gridLeft - i * colSpacing - colSpacing / 2f
-                cluePaint.color = displayColorFor(resolveClueColor(p, clue.colorIndex))
                 canvas.drawText(clue.count.toString(), x, cellCenterY, cluePaint)
             }
         }
-    }
-
-    private fun resolveClueColor(p: Puzzle, colorIndex: Int): Int =
-        if (colorIndex <= 0) DEFAULT_CLUE_COLOR else p.palette[colorIndex - 1]
-
-    private fun displayColorFor(clueColorInt: Int): Int {
-        val r = Color.red(clueColorInt)
-        val g = Color.green(clueColorInt)
-        val b = Color.blue(clueColorInt)
-        val luminance = 0.299 * r + 0.587 * g + 0.114 * b
-        if (luminance <= LUMINANCE_DARKEN_THRESHOLD) return clueColorInt
-        val mixR = (r + Color.red(DARK_MIX_COLOR)) / 2
-        val mixG = (g + Color.green(DARK_MIX_COLOR)) / 2
-        val mixB = (b + Color.blue(DARK_MIX_COLOR)) / 2
-        return Color.rgb(mixR, mixG, mixB)
     }
 
     private fun drawCells(canvas: Canvas, g: List<List<CellState>>, p: Puzzle) {
@@ -231,7 +210,6 @@ class PicrossGridView @JvmOverloads constructor(
                         canvas.drawLine(r - margin, t + margin, l + margin, b - margin, xPaint)
                     }
                     CellState.Incorrect -> {
-                        canvas.drawRect(l, t, r, b, incorrectPaint)
                         canvas.drawLine(l + margin, t + margin, r - margin, b - margin, incorrectXPaint)
                         canvas.drawLine(r - margin, t + margin, l + margin, b - margin, incorrectXPaint)
                     }
@@ -257,9 +235,4 @@ class PicrossGridView @JvmOverloads constructor(
         }
     }
 
-    companion object {
-        private val DEFAULT_CLUE_COLOR = Color.parseColor("#212121")
-        private val DARK_MIX_COLOR = Color.parseColor("#424242")
-        private const val LUMINANCE_DARKEN_THRESHOLD = 160.0
-    }
 }

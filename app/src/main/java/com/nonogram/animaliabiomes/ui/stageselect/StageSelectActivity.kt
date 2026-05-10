@@ -3,6 +3,7 @@ package com.nonogram.animaliabiomes.ui.stageselect
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -35,6 +36,8 @@ class StageSelectActivity : AppCompatActivity() {
         setContentView(R.layout.activity_stage_select)
 
         biomeId = intent.getIntExtra(EXTRA_BIOME_ID, 1)
+
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener { finish() }
 
         lifecycleScope.launch {
             val biome = Repositories.puzzles(this@StageSelectActivity).getBiome(biomeId)

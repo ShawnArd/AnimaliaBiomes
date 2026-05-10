@@ -701,6 +701,105 @@ class PuzzleSerializerTest {
         }
     """.trimIndent()
 
+    @Test
+    fun rejects10x10WithSingleColor() {
+        val rows = (1..10).map { "OOOOOOOOOO" }
+        val json = v2PuzzleJson(
+            size = 10,
+            palette = mapOf("O" to "#F57C00"),
+            solutionRows = rows
+        )
+        val ex = assertThrows(PuzzleValidationException::class.java) {
+            PuzzleSerializer.loadBiome(json)
+        }
+        assert(ex.message!!.contains("requires at least 2 palette colors"))
+    }
+
+    @Test
+    fun accepts10x10WithTwoColors() {
+        val rows = (1..10).map { "OOOOOWWWWW" }
+        val json = v2PuzzleJson(
+            size = 10,
+            palette = mapOf("O" to "#F57C00", "W" to "#FFFFFF"),
+            solutionRows = rows
+        )
+        val biome = PuzzleSerializer.loadBiome(json)
+        assertEquals(10, biome.puzzles[0].gridSize)
+    }
+
+    @Test
+    fun rejects15x15WithTwoColors() {
+        val rows = (1..15).map { "OOOOOOOOOWWWWWW" }
+        val json = v2PuzzleJson(
+            size = 15,
+            palette = mapOf("O" to "#F57C00", "W" to "#FFFFFF"),
+            solutionRows = rows
+        )
+        val ex = assertThrows(PuzzleValidationException::class.java) {
+            PuzzleSerializer.loadBiome(json)
+        }
+        assert(ex.message!!.contains("requires at least 3 palette colors"))
+    }
+
+    @Test
+    fun accepts15x15WithThreeColors() {
+        val rows = (1..15).map { "OOOOOWWWWWKKKKK" }
+        val json = v2PuzzleJson(
+            size = 15,
+            palette = mapOf("O" to "#F57C00", "W" to "#FFFFFF", "K" to "#212121"),
+            solutionRows = rows
+        )
+        val biome = PuzzleSerializer.loadBiome(json)
+        assertEquals(15, biome.puzzles[0].gridSize)
+    }
+
+    @Test
+    fun rejects20x20WithTwoColors() {
+        val rows = (1..20).map { "OOOOOOOOOOWWWWWWWWWW" }
+        val json = v2PuzzleJson(
+            size = 20,
+            palette = mapOf("O" to "#F57C00", "W" to "#FFFFFF"),
+            solutionRows = rows
+        )
+        val ex = assertThrows(PuzzleValidationException::class.java) {
+            PuzzleSerializer.loadBiome(json)
+        }
+        assert(ex.message!!.contains("requires at least 3 palette colors"))
+    }
+
+    @Test
+    fun accepts5x5WithSingleColor() {
+        // No minimum-color rule for 5x5 (Shores).
+        val biome = PuzzleSerializer.loadBiome(VALID_FISH_BIOME)
+        assertEquals(1, biome.puzzles[0].palette.size)
+    }
+
+    private fun v2PuzzleJson(
+        size: Int,
+        palette: Map<String, String>,
+        solutionRows: List<String>
+    ): String {
+        val paletteJson = palette.entries.joinToString(",") { (k, v) -> "\"$k\":\"$v\"" }
+        val solutionJson = solutionRows.joinToString(",") { "\"$it\"" }
+        return """
+            {
+              "schemaVersion": 2,
+              "id": 1,
+              "name": "Ocean",
+              "puzzles": [
+                {
+                  "id": 1,
+                  "name": "Test",
+                  "size": $size,
+                  "funFact": "Some fun fact.",
+                  "palette": { $paletteJson },
+                  "solution": [ $solutionJson ]
+                }
+              ]
+            }
+        """.trimIndent()
+    }
+
     private fun puzzleObject(
         id: Int,
         name: String,
