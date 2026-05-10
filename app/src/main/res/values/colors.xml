@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ocean_deep">#1A237E</color>
+    <color name="ocean_mid">#1565C0</color>
+    <color name="ocean_light">#42A5F5</color>
+    <color name="ocean_foam">#E3F2FD</color>
+    <color name="background">#F5F6FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <color name="strike_red">#E53935</color>
+    <color name="cell_filled">#1A237E</color>
+    <color name="cell_empty">#ECF0F1</color>
+    <color name="cell_marked">#CFD8DC</color>
+    <color name="grid_line">#90A4AE</color>
+</resources>

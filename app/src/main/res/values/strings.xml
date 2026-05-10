@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Animalia Biomes (Nonogram)</string>
+    <string name="biome_ocean">Ocean</string>
+    <string name="btn_start_puzzle">Start Puzzle</string>
+    <string name="label_strikes">Strikes</string>
+    <string name="puzzle_complete">Puzzle solved!</string>
+    <string name="three_strikes_reset">3 strikes — puzzle reset!</string>
+    <string name="select_biome">Select a Biome</string>
+    <string name="fun_fact_label">Did you know?</string>
+</resources>

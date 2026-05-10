@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="36dp"
+    android:background="@color/ocean_deep">
+
+    <TextView
+        android:id="@+id/tvAnimalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="52sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvGridSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/ocean_light"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="32dp"/>
+
+    <View
+        android:layout_width="48dp"
+        android:layout_height="2dp"
+        android:background="@color/ocean_light"
+        android:layout_marginBottom="28dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Did you know?"
+        android:textSize="12sp"
+        android:textColor="@color/ocean_light"
+        android:letterSpacing="0.15"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/tvFunFact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/ocean_foam"
+        android:textAlignment="center"
+        android:lineSpacingMultiplier="1.6"
+        android:layout_marginBottom="56dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartPuzzle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Start Puzzle"
+        android:textSize="18sp"
+        android:backgroundTint="@color/ocean_light"/>
+
+</LinearLayout>

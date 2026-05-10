@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- Top bar: puzzle name + strikes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:background="@color/ocean_deep">
+
+        <TextView
+            android:id="@+id/tvPuzzleName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/ivStrike1"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_strike"
+            android:alpha="0.2"
+            android:layout_marginStart="6dp"/>
+
+        <ImageView
+            android:id="@+id/ivStrike2"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_strike"
+            android:alpha="0.2"
+            android:layout_marginStart="6dp"/>
+
+        <ImageView
+            android:id="@+id/ivStrike3"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_strike"
+            android:alpha="0.2"
+            android:layout_marginStart="6dp"/>
+
+    </LinearLayout>
+
+    <!-- Picross grid (fills remaining space) -->
+    <com.nonogram.animaliabiomes.ui.game.PicrossGridView
+        android:id="@+id/picrossGridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:background="@color/background"/>
+
+</LinearLayout>
