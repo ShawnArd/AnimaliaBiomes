@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 3,
+  "id": 1,
+  "name": "Ocean",
+  "stages": [
+    {
+      "id": 1,
+      "name": "Shores",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 1,
+          "name": "Fish",
+          "size": 5,
+          "funFact": "Most fish don't have eyelids — they sleep with their eyes wide open!",
+          "palette": { "O": "#F57C00" },
+          "solution": [
+            ".OOO.",
+            "O...O",
+            "OOOOO",
+            "O...O",
+            ".OOO."
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Crab",
+          "size": 5,
+          "funFact": "Crabs can walk in all four directions, but they prefer to walk sideways.",
+          "palette": { "R": "#C62828" },
+          "solution": [
+            "R.R.R",
+            "RRRRR",
+            ".RRR.",
+            "RRRRR",
+            ".R.R."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Shallows",
+      "targetPuzzleCount": 4,
+      "puzzles": []
+    },
+    {
+      "id": 3,
+      "name": "Depths",
+      "targetPuzzleCount": 4,
+      "puzzles": []
+    },
+    {
+      "id": 4,
+      "name": "Open Ocean",
+      "targetPuzzleCount": 8,
+      "puzzles": []
+    }
+  ]
+}

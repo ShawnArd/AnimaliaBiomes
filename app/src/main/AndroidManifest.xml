@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.stageselect.StageSelectActivity"/>
         <activity android:name=".ui.puzzlelist.PuzzleListActivity"/>
         <activity android:name=".ui.funfact.FunFactActivity"/>
         <activity android:name=".ui.game.GameActivity"/>

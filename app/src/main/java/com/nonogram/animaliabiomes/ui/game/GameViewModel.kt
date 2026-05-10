@@ -21,17 +21,20 @@ class GameViewModel : ViewModel() {
     private val _isComplete = MutableLiveData(false)
     val isComplete: LiveData<Boolean> = _isComplete
 
-    // Emits the (row, col) of a wrong tap so the view can flash it red
     private val _strikeFlash = MutableLiveData<Pair<Int, Int>?>(null)
     val strikeFlash: LiveData<Pair<Int, Int>?> = _strikeFlash
 
+    private val _selectedColor = MutableLiveData(1)
+    val selectedColor: LiveData<Int> = _selectedColor
+
     fun init(p: Puzzle) {
         puzzle = p
+        _selectedColor.value = 1
         reset()
     }
 
     private fun emptyGrid(): Grid =
-        List(puzzle.gridSize) { List(puzzle.gridSize) { CellState.EMPTY } }
+        List(puzzle.gridSize) { List(puzzle.gridSize) { CellState.Empty } }
 
     private fun reset() {
         _grid.value = emptyGrid()
@@ -39,22 +42,28 @@ class GameViewModel : ViewModel() {
         _isComplete.value = false
     }
 
+    fun setSelectedColor(idx: Int) {
+        _selectedColor.value = idx
+    }
+
     fun onCellTap(row: Int, col: Int) {
         val current = _grid.value ?: return
-        if (current[row][col] != CellState.EMPTY) return
+        if (current[row][col] != CellState.Empty) return
 
-        if (puzzle.solution[row][col]) {
+        val solutionValue = puzzle.solution[row][col]
+        val selected = _selectedColor.value ?: 1
+
+        if (solutionValue != 0 && solutionValue == selected) {
             _grid.value = current.mapIndexed { r, rowList ->
                 rowList.mapIndexed { c, cell ->
-                    if (r == row && c == col) CellState.FILLED else cell
+                    if (r == row && c == col) CellState.Filled(solutionValue) else cell
                 }
             }
             checkWin()
         } else {
-            // Mark cell as incorrect permanently so the X stays visible
             _grid.value = current.mapIndexed { r, rowList ->
                 rowList.mapIndexed { c, cell ->
-                    if (r == row && c == col) CellState.INCORRECT else cell
+                    if (r == row && c == col) CellState.Incorrect else cell
                 }
             }
             val newStrikes = (_strikes.value ?: 0) + 1
@@ -65,12 +74,13 @@ class GameViewModel : ViewModel() {
 
     fun onCellLongPress(row: Int, col: Int) {
         val current = _grid.value ?: return
-        if (current[row][col] == CellState.FILLED || current[row][col] == CellState.INCORRECT) return
+        val cell = current[row][col]
+        if (cell is CellState.Filled || cell == CellState.Incorrect) return
         _grid.value = current.mapIndexed { r, rowList ->
-            rowList.mapIndexed { c, cell ->
+            rowList.mapIndexed { c, existing ->
                 if (r == row && c == col) {
-                    if (cell == CellState.MARKED) CellState.EMPTY else CellState.MARKED
-                } else cell
+                    if (existing == CellState.Marked) CellState.Empty else CellState.Marked
+                } else existing
             }
         }
     }
@@ -88,7 +98,13 @@ class GameViewModel : ViewModel() {
         val size = puzzle.gridSize
         for (r in 0 until size) {
             for (c in 0 until size) {
-                if (puzzle.solution[r][c] && g[r][c] != CellState.FILLED) return
+                val expected = puzzle.solution[r][c]
+                val cell = g[r][c]
+                if (expected == 0) {
+                    if (cell is CellState.Filled) return
+                } else {
+                    if (cell !is CellState.Filled || cell.colorIndex != expected) return
+                }
             }
         }
         _isComplete.value = true

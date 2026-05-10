@@ -8,4 +8,16 @@
     <string name="three_strikes_reset">3 strikes — puzzle reset!</string>
     <string name="select_biome">Select a Biome</string>
     <string name="fun_fact_label">Did you know?</string>
+    <string name="puzzle_unavailable">Puzzle unavailable</string>
+    <string name="biome_unavailable">Biome unavailable</string>
+    <string name="stage_unavailable">Stage unavailable</string>
+    <string name="select_stage">Select a Stage</string>
+    <string name="stage_shores">Shores</string>
+    <string name="stage_shallows">Shallows</string>
+    <string name="stage_depths">Depths</string>
+    <string name="stage_open_ocean">Open Ocean</string>
+    <string name="stage_subtitle">%1$d of %2$d completed</string>
+    <string name="stage_locked_tooltip">Complete %1$d more puzzle(s) in %2$s to unlock</string>
+    <string name="stage_locked_toast">Locked — finish more puzzles in the previous stage</string>
+    <string name="lock_icon_description">Locked</string>
 </resources>

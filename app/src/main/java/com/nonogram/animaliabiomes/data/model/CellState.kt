@@ -1,8 +1,8 @@
 package com.nonogram.animaliabiomes.data.model
 
-enum class CellState {
-    EMPTY,
-    FILLED,
-    MARKED,    // player's strategy X marker (long press)
-    INCORRECT  // wrong cell tapped — locked with red X until reset
+sealed class CellState {
+    object Empty : CellState()
+    object Marked : CellState()
+    object Incorrect : CellState()
+    data class Filled(val colorIndex: Int) : CellState()
 }

@@ -67,4 +67,13 @@
         android:padding="12dp"
         android:background="@android:color/transparent"/>
 
+    <!-- Color palette picker -->
+    <com.nonogram.animaliabiomes.ui.game.ColorPaletteView
+        android:id="@+id/colorPaletteView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:background="@android:color/transparent"/>
+
 </LinearLayout>

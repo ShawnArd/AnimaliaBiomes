@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:padding="24dp"
     android:background="@color/background">
 
@@ -11,6 +10,7 @@
         android:id="@+id/tvBiomeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@color/ocean_deep"
@@ -19,33 +19,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="Choose a Puzzle"
         android:textSize="14sp"
         android:textColor="@color/text_secondary"
         android:layout_marginBottom="32dp"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPuzzle1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:textSize="16sp"
-        android:backgroundTint="@color/ocean_deep"
-        android:layout_marginBottom="12dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPuzzle2"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:textSize="16sp"
-        android:backgroundTint="@color/ocean_mid"
-        android:layout_marginBottom="12dp"/>
+        <LinearLayout
+            android:id="@+id/puzzleButtonsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPuzzle3"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:textSize="16sp"
-        android:backgroundTint="@color/ocean_light"
-        android:layout_marginBottom="12dp"/>
+    </ScrollView>
 
 </LinearLayout>
