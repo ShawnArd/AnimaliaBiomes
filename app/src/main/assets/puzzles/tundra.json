@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 3,
+  "id": 5,
+  "name": "Tundra",
+  "stages": [
+    {
+      "id": 1,
+      "name": "Alpine",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 1,
+          "name": "Pika",
+          "size": 5,
+          "funFact": "Pikas don't hibernate. Instead they spend the summer building 'haypiles' of dried plants under rocks to eat through the long alpine winter.",
+          "palette": {
+            "B": "#8B6A4A",
+            "K": "#2A1F18"
+          },
+          "solution": [
+            "B.K.B",
+            "BBBBB",
+            "BKBKB",
+            "BBBBB",
+            "B...B"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Ptarmigan",
+          "size": 5,
+          "funFact": "The ptarmigan changes its feathers with the seasons, going pure white in winter to blend with snow and mottled brown in summer to match the rocks.",
+          "palette": {
+            "W": "#F0F0F0",
+            "K": "#2B2B2B",
+            "R": "#C0392B"
+          },
+          "solution": [
+            "..RW.",
+            ".WWWW",
+            ".WWWW",
+            "WWWWW",
+            "K.K.."
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Marmot",
+          "size": 5,
+          "funFact": "Marmots whistle sharp alarm calls to warn the colony of predators, earning them the nickname 'whistle pigs' in the high mountains.",
+          "palette": {
+            "B": "#8E6A3F",
+            "K": "#3A2616"
+          },
+          "solution": [
+            ".BBB.",
+            "BKBKB",
+            "BBBBB",
+            ".BBB.",
+            "B...B"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Edelweiss",
+          "size": 5,
+          "funFact": "Edelweiss grows on high alpine cliffs and is covered in tiny white woolly hairs that reflect ultraviolet light, protecting it from intense mountain sun.",
+          "palette": {
+            "W": "#F4F4E8",
+            "Y": "#E8C547",
+            "G": "#3E6B3C"
+          },
+          "solution": [
+            "W.W.W",
+            "WYYYW",
+            ".YWY.",
+            "WYYYW",
+            "G.G.G"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Subarctic",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 5,
+          "name": "Lemming",
+          "size": 10,
+          "funFact": "Lemming populations boom and crash in roughly four-year cycles, and contrary to legend they do not commit mass suicide off cliffs.",
+          "palette": {
+            "B": "#9C7A4F",
+            "K": "#2E1F11",
+            "W": "#F2E8D8"
+          },
+          "solution": [
+            "..........",
+            "...BBBB...",
+            "..BBBBBB..",
+            ".BBKBBKBB.",
+            ".BBBBBBBB.",
+            ".BBBWWBBB.",
+            "BBBBBBBBBB",
+            "BBBBBBBBBB",
+            ".BB.BB.BB.",
+            ".K...K...."
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Snowshoe Hare",
+          "size": 10,
+          "funFact": "The snowshoe hare's huge furry hind feet act like snowshoes, letting it bound across deep snow without sinking when chased by lynx.",
+          "palette": {
+            "W": "#F5F5F5",
+            "K": "#2B2B2B",
+            "G": "#888888"
+          },
+          "solution": [
+            "..W.......",
+            ".WW.W.....",
+            ".WWWWW....",
+            ".WKWWW....",
+            ".WWWWWW...",
+            "..WWWWWWW.",
+            ".WWWWWWWWW",
+            "WWWWWWWWWW",
+            "G.GG.G.GG.",
+            "G.GG.G.GG."
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Wolverine",
+          "size": 10,
+          "funFact": "Pound for pound the wolverine is one of the strongest mammals alive, capable of taking down prey many times its size and crushing frozen bone with its jaws.",
+          "palette": {
+            "B": "#4A3220",
+            "K": "#15100A",
+            "W": "#E8D9B8"
+          },
+          "solution": [
+            "..........",
+            ".BB....BB.",
+            "BBBB..BBBB",
+            "BWBBBBBBWB",
+            "BBKBBBBKBB",
+            "BBBBBWBBBB",
+            ".BBBBWBBBB",
+            ".BBWBBBWBB",
+            "B.B....B.B",
+            "K.K....K.K"
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Lynx",
+          "size": 10,
+          "funFact": "The lynx has long black ear tufts thought to enhance its already keen hearing, helping it locate snowshoe hares hidden beneath the snow.",
+          "palette": {
+            "B": "#A88A5C",
+            "K": "#2A1F12",
+            "W": "#F0E6D2"
+          },
+          "solution": [
+            "K..KK..K..",
+            "K.BBBB.K..",
+            ".BBBBBB...",
+            ".BKBBKB...",
+            ".BBWWBB...",
+            ".BBBWBB...",
+            "..BBBB....",
+            ".BBBBBB...",
+            "BBBBBBBB..",
+            "K.K..K.K.."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Arctic",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 9,
+          "name": "Arctic Fox",
+          "size": 15,
+          "funFact": "The arctic fox has the warmest fur of any mammal and switches from brown summer coat to thick white winter fur to vanish against the snow.",
+          "palette": {
+            "W": "#F5F5F5",
+            "K": "#2B2B2B",
+            "G": "#7A7A7A"
+          },
+          "solution": [
+            "...............",
+            ".WW.........WW.",
+            ".WWW.......WWW.",
+            ".WWWWWWWWWWWWW.",
+            "WWWWWWWWWWWWWWW",
+            "WWKWWWWWWWWWKWW",
+            "WWWWWWKWWKWWWWW",
+            "WWWWWWWWWWWWWWW",
+            ".WWWWWWKWWWWWW.",
+            "..WWWWWWWWWWW..",
+            "...WWWWWWWWWW..",
+            "....WWWWWWWWWWW",
+            ".....WWWWWWWWWW",
+            "G.G..........G.",
+            "G.G..........G."
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Snowy Owl",
+          "size": 15,
+          "funFact": "Snowy owls have feathered feet like fluffy slippers for insulation and hunt by day during the endless arctic summer when there is no night.",
+          "palette": {
+            "W": "#F5F5F5",
+            "K": "#222222",
+            "Y": "#E8B83B"
+          },
+          "solution": [
+            "...............",
+            "....W.....W....",
+            "...WWW...WWW...",
+            "..WWWWWWWWWWW..",
+            ".WWWWWWWWWWWWW.",
+            ".WWYKWWWWWYKWW.",
+            ".WWKKWWWWWKKWW.",
+            ".WWWWWKWKWWWWW.",
+            ".WWWWWWWWWWWWW.",
+            "WWWKWWWWWWWKWWW",
+            "WWWWKWWKWWKWWWW",
+            "WWWWWKKWKKWWWWW",
+            ".WWWWWWWWWWWWW.",
+            "..WWWWWWWWWWW..",
+            "...W.......W..."
+          ]
+        },
+        {
+          "id": 11,
+          "name": "Musk Ox",
+          "size": 15,
+          "funFact": "Musk oxen grow qiviut, an undercoat eight times warmer than sheep's wool, and they form defensive circles around their calves when wolves attack.",
+          "palette": {
+            "B": "#3E2A18",
+            "K": "#15100A",
+            "W": "#D8C49A"
+          },
+          "solution": [
+            "...............",
+            "...............",
+            ".....BBBBBB....",
+            "....BBBBBBBB...",
+            "...WBBBBBBBBW..",
+            "..WWBBKBBKBBWW.",
+            ".BBBBBBBBBBBBB.",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            ".BBBBBBBBBBBBB.",
+            ".BBBBBBBBBBBBB.",
+            ".BBBBBBBBBBBBB.",
+            ".B.B.......B.B.",
+            ".K.K.......K.K."
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Caribou",
+          "size": 15,
+          "funFact": "Caribou are the only deer in which both males and females grow antlers, and their hooves click audibly as they walk thanks to a tendon that slides over a bone.",
+          "palette": {
+            "B": "#6A5038",
+            "K": "#241810",
+            "W": "#E8D9B8"
+          },
+          "solution": [
+            "K..K.....K..K..",
+            "KKKKK...KKKKK..",
+            "K.K.KK.KK.K.K..",
+            ".KKKKKKKKKKK...",
+            "....BBBB.......",
+            "...BBBBB.......",
+            "...BKBBB.......",
+            "...BBBBBBBBBBB.",
+            "...WBBBBBBBBBB.",
+            "....BBBBBBBBBB.",
+            "....BBBBBBBBBB.",
+            "....BBBBBBBBBB.",
+            "....B.B....B.B.",
+            "....B.B....B.B.",
+            "....K.K....K.K."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Polar Sea Ice",
+      "targetPuzzleCount": 8,
+      "puzzles": [
+        {
+          "id": 13,
+          "name": "Polar Bear",
+          "size": 20,
+          "funFact": "Polar bear fur looks white but is actually translucent, and their skin underneath is black to absorb the sun's warmth.",
+          "palette": {
+            "W": "#F5F5F5",
+            "K": "#2B2B2B",
+            "G": "#9AA0A6"
+          },
+          "solution": [
+            "....................",
+            ".....WW.......WW....",
+            "....WWWW.....WWWW...",
+            "....WWWWWWWWWWWWW...",
+            "...WWWWWWWWWWWWWWW..",
+            "...WWKWWWWWWWWWKWW..",
+            "...WWWWWWKKKWWWWWW..",
+            "...WWWWWWWWWWWWWWW..",
+            "..WWWWWWWWWWWWWWWWW.",
+            ".WWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            ".WWWWWWWWWWWWWWWWWW.",
+            "..WWWW.WWWWWW.WWWW..",
+            "..WWWW.WWWWWW.WWWW..",
+            "..GG.G.GG..GG.G.GG..",
+            "..GG.G.GG..GG.G.GG.."
+          ]
+        },
+        {
+          "id": 14,
+          "name": "Walrus",
+          "size": 20,
+          "funFact": "Walrus tusks are actually enlarged canine teeth that can grow over three feet long, used to haul their bulk onto ice and to fight for mates.",
+          "palette": {
+            "B": "#8C6A4A",
+            "K": "#2A1A10",
+            "W": "#F0EAD8"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "......BBBBBBBB......",
+            ".....BBBBBBBBBB.....",
+            "....BBBBBBBBBBBB....",
+            "....BBKBBBBBBKBB....",
+            "....BBBBBBBBBBBB....",
+            "....BBBBBBBBBBBB....",
+            "....BBBWBBBBWBBB....",
+            "...BBBWWBBBBWWBBB...",
+            "...BBBBWBBBBWBBBB...",
+            "..BBBBBBBBBBBBBBBB..",
+            ".BBBBBBBBBBBBBBBBBB.",
+            "BBBBBBBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBBBBBBB",
+            ".BBBBBBBBBBBBBBBBBB.",
+            "..BBBB......BBBB....",
+            "..BBBB......BBBB....",
+            "..K..K......K..K...."
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Narwhal",
+          "size": 20,
+          "funFact": "The narwhal's spiral tusk is actually a single tooth that grows through its upper lip, packed with nerve endings that may help sense the ocean around it.",
+          "palette": {
+            "G": "#6E7A85",
+            "W": "#E8ECF0",
+            "K": "#1C242B"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "....................",
+            "WWWWWWWWWWW.........",
+            "...........GGGGG....",
+            "..........GGGGGGG...",
+            ".........GGGGGGGGG..",
+            "........GGGGGGGGGGG.",
+            "GKGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGWWWWGGGGGGGGGGGGGG",
+            ".WWWWWWWGGGGGGGGGGG.",
+            "..WWWWWWWWGGGGGGG...",
+            "....WWWWWWGGGGG.....",
+            ".......WW....G......",
+            "............G.G.....",
+            "...........G...G....",
+            "....................",
+            "....................",
+            "...................."
+          ]
+        },
+        {
+          "id": 16,
+          "name": "Emperor Penguin",
+          "size": 20,
+          "funFact": "Male emperor penguins balance a single egg on their feet through the antarctic winter, huddling together in temperatures below minus 40 degrees.",
+          "palette": {
+            "K": "#1A1A1A",
+            "W": "#F5F5F5",
+            "Y": "#F4C430"
+          },
+          "solution": [
+            "....................",
+            "........KKKK........",
+            ".......KKKKKK.......",
+            ".......KKWWKK.......",
+            ".......KWWWWK.......",
+            "......KKWYYWKK......",
+            "......KKKYYKKK......",
+            ".....KKKKKKKKKK.....",
+            ".....KKWWWWWWKK.....",
+            "....KKWWWWWWWWKK....",
+            "....KKWWWWWWWWKK....",
+            "....KKWWWWWWWWKK....",
+            "....KKWWWWWWWWKK....",
+            "....KKWWWWWWWWKK....",
+            "....KKWWWWWWWWKK....",
+            "....KKWWWWWWWWKK....",
+            ".....KKWWWWWWKK.....",
+            ".....KKWWWWWWKK.....",
+            ".....YY......YY.....",
+            ".....YY......YY....."
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Beluga Whale",
+          "size": 20,
+          "funFact": "Belugas are nicknamed 'canaries of the sea' for their chirps, whistles, and clicks, and they are one of the only whales that can turn their head side to side.",
+          "palette": {
+            "W": "#EAEEF2",
+            "G": "#A8B0B8",
+            "K": "#1F2A33"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            ".......WWWWWWW......",
+            "......WWWWWWWWW.....",
+            ".....WWWWWWWWWWW....",
+            "....WWWWWWWWWWWWW...",
+            "...WWWWWWWWWWWWWWW..",
+            "..WWWWWWWWWWWWWWWWW.",
+            ".WWWWWWWWWWWWWWWWWWW",
+            "WWKWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            ".WWWWWWWWWWWWWWWWWWW",
+            "..WWWWWWWWWWWWWWWWW.",
+            "...WWWWWWWWWWWWWWW..",
+            "....WWWWWWWWWWWWW...",
+            ".....WWWWWWWWWWW....",
+            "......WWWWWWWWW.....",
+            ".......G.....G......",
+            "......GGG...GGG.....",
+            "...................."
+          ]
+        },
+        {
+          "id": 18,
+          "name": "Orca",
+          "size": 20,
+          "funFact": "Polar orcas hunt in coordinated pods and have learned to create waves that wash seals off ice floes, a behavior taught from mothers to calves.",
+          "palette": {
+            "K": "#0F1418",
+            "W": "#F2F4F5",
+            "G": "#6B7378"
+          },
+          "solution": [
+            "....................",
+            "........K...........",
+            "........KK..........",
+            ".......KKK..........",
+            "......KKKK..........",
+            "..KKKKKKKKKKKKK.....",
+            ".KKKKKKKKKKKKKKK....",
+            "KKKKKKKKKKKKKKKKKK..",
+            "KKWKKKKKKKKKKKKKKKKK",
+            "KKKKKKKKKKKKKKKKKKKK",
+            "KKKKKKWWWWWWKKKKKKKK",
+            "KKKKKWWWWWWWWKKKKKK.",
+            ".KKKKWWWWWWWWKKKKK..",
+            "..KKKWWWWWWWWKKKK...",
+            "...KKWWWWWWWWKKK....",
+            "....KKKKKKKKKK......",
+            ".....G.G..G.G.......",
+            ".....G.G..G.G.......",
+            "....................",
+            "...................."
+          ]
+        },
+        {
+          "id": 19,
+          "name": "Harp Seal",
+          "size": 20,
+          "funFact": "Harp seal pups are born with fluffy white coats that hide them on the ice for the first few weeks, after which they molt into the silver adult fur.",
+          "palette": {
+            "W": "#F2F2F2",
+            "K": "#222222",
+            "G": "#A0A0A0"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            ".......WWWWWW.......",
+            "......WWWWWWWW......",
+            ".....WWKWWWWKWW.....",
+            ".....WWWWKKWWWW.....",
+            "....WWWWWWWWWWWW....",
+            "...WWWWWWWWWWWWWW...",
+            "..WWWWWWWWWWWWWWWW..",
+            ".WWWWWWWWWWWWWWWWWW.",
+            "WWWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            "WWWWWWWWWWWWWWWWWWWW",
+            ".WWWWWWWWWWWWWWWWWW.",
+            "..WWWWWWWWWWWWWWWW..",
+            "...WWWWWWWWWWWWWW...",
+            "....WWWWWWWWWWWW....",
+            ".....WWWWWWWWWW.....",
+            "......GG....GG......",
+            ".....GGGG..GGGG....."
+          ]
+        },
+        {
+          "id": 20,
+          "name": "Snowy Petrel",
+          "size": 20,
+          "funFact": "The snowy petrel is one of only three bird species ever seen at the South Pole, nesting on cliffs hundreds of miles inland on the Antarctic continent.",
+          "palette": {
+            "W": "#F5F5F5",
+            "K": "#222222",
+            "G": "#B0B5BA"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "GG..................",
+            "WWGG................",
+            ".WWWWGG.............",
+            "..WWWWWWGG..........",
+            "...WWWWWWWWGG.......",
+            "....WWWWWWWWWWGG....",
+            ".....WWWWWWWWWWWWGG.",
+            "......WWKWWWWWWWWWWG",
+            "......WWWWWWWWWWWWGG",
+            ".....WWWWWWWWWWWGG..",
+            "....WWWWWWWWWGG.....",
+            "...WWWWWWWGG........",
+            "..WWWWWGG...........",
+            ".WWWGG..............",
+            "WGG.................",
+            "G...................",
+            "....................",
+            "...................."
+          ]
+        }
+      ]
+    }
+  ]
+}

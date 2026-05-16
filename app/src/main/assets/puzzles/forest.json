@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 3,
+  "id": 3,
+  "name": "Forest",
+  "stages": [
+    {
+      "id": 1,
+      "name": "Taiga",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 1,
+          "name": "Spruce Tree",
+          "size": 5,
+          "funFact": "Spruce trees are conical evergreens that dominate the taiga; their downward-sloping branches shed heavy snow easily, which keeps limbs from snapping under winter loads.",
+          "palette": {
+            "G": "#2E5D3A",
+            "B": "#5D3A1F"
+          },
+          "solution": [
+            "..G..",
+            ".GGG.",
+            "GGGGG",
+            ".GGG.",
+            "..B.."
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Pine Cone",
+          "size": 5,
+          "funFact": "Pine cones open and close in response to humidity, releasing their seeds only in dry weather so the wind can carry them farther from the parent tree.",
+          "palette": {
+            "B": "#6B3E1A",
+            "T": "#3A6B2E"
+          },
+          "solution": [
+            "..T..",
+            ".BBB.",
+            ".BBB.",
+            ".BBB.",
+            "..B.."
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Snowshoe Hare",
+          "size": 5,
+          "funFact": "Snowshoe hares change coat color with the seasons — brown in summer and pure white in winter — providing year-round camouflage in the boreal forest.",
+          "palette": {
+            "W": "#F2F2F2",
+            "K": "#2A2A2A"
+          },
+          "solution": [
+            "K.K..",
+            "WWW..",
+            "WWWWW",
+            "WWWWW",
+            "W...W"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Chickadee",
+          "size": 5,
+          "funFact": "Black-capped chickadees can lower their body temperature at night to conserve energy, entering a regulated hypothermia that helps them survive frigid taiga winters.",
+          "palette": {
+            "K": "#1E1E1E",
+            "W": "#EFEFEF",
+            "Y": "#C9A063"
+          },
+          "solution": [
+            ".KKK.",
+            "KWWWK",
+            ".WWW.",
+            ".YYY.",
+            "..Y.."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Temperate Deciduous",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 5,
+          "name": "Red Fox",
+          "size": 10,
+          "funFact": "Red foxes use Earth's magnetic field to hunt — they preferentially pounce on prey while facing northeast, which dramatically improves their strike accuracy through deep snow.",
+          "palette": {
+            "R": "#C0532A",
+            "W": "#F0E6D6",
+            "K": "#1C1C1C"
+          },
+          "solution": [
+            "R........R",
+            "RR......RR",
+            "RRR....RRR",
+            ".RRRRRRRR.",
+            ".RKRWWRKR.",
+            ".RRRWWRRR.",
+            "..RRRRRR..",
+            "..RRWWRR..",
+            "...R..R...",
+            "...R..R..."
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Acorn",
+          "size": 10,
+          "funFact": "A single mature oak tree can drop up to 10,000 acorns in a good year, but only about one in 10,000 will ever grow into a new oak tree.",
+          "palette": {
+            "B": "#7A4A1E",
+            "C": "#4A2A10",
+            "G": "#3A6B2E"
+          },
+          "solution": [
+            "....G.....",
+            "...GG.....",
+            "..CCCCCC..",
+            ".CCCCCCCC.",
+            ".CCCCCCCC.",
+            ".BBBBBBBB.",
+            ".BBBBBBBB.",
+            "..BBBBBB..",
+            "..BBBBBB..",
+            "...BBBB..."
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Mushroom",
+          "size": 10,
+          "funFact": "The mushroom we see is just the fruiting body — beneath the forest floor, mycelial networks connect trees and ferry nutrients between them in what biologists call the wood wide web.",
+          "palette": {
+            "R": "#B33A2A",
+            "W": "#F5EFE0",
+            "T": "#C2A87A"
+          },
+          "solution": [
+            "...RRRR...",
+            "..RRRRRR..",
+            ".RRWRRWRR.",
+            "RRRRRRRRRR",
+            "RRWRRRRWRR",
+            ".RRRRRRRR.",
+            "...TWWT...",
+            "...TWWT...",
+            "...TWWT...",
+            "..TTWWTT.."
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Maple Leaf",
+          "size": 10,
+          "funFact": "Maple leaves turn brilliant red and orange in autumn because shorter days shut down chlorophyll production, unmasking carotenoid pigments and triggering anthocyanin synthesis.",
+          "palette": {
+            "R": "#C0301A",
+            "O": "#E07A1A",
+            "B": "#6B3E1A"
+          },
+          "solution": [
+            "..R..R..R.",
+            "R.RO.OR.R.",
+            "RROOOOORR.",
+            ".OOOOOOOO.",
+            "ROOOOOOOOR",
+            ".OOOOOOOO.",
+            "..OOOOOO..",
+            "....OO....",
+            "....BB....",
+            "....BB...."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Temperate Coniferous",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 9,
+          "name": "Bald Eagle",
+          "size": 15,
+          "funFact": "Bald eagle nests are the largest of any North American bird — pairs add sticks each year, and one Florida nest grew to nearly 3 meters wide and weighed over two tonnes.",
+          "palette": {
+            "W": "#F2F2F2",
+            "K": "#2A2A2A",
+            "Y": "#E0A820",
+            "B": "#5D3A1F"
+          },
+          "solution": [
+            ".......W.......",
+            "......WWW......",
+            "......WWW......",
+            ".....WKKKW.....",
+            ".....WYYYW.....",
+            "....KKWWWKK....",
+            "...KKKBBBKKK...",
+            "..KKKBBBBBKKK..",
+            ".KKKKBBBBBKKKK.",
+            "KKKKKBBBBBKKKKK",
+            ".KK.KBBBBBK.KK.",
+            "....KBBBBBK....",
+            ".....BBBBB.....",
+            ".....YY.YY.....",
+            ".....YY.YY....."
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Salmon",
+          "size": 15,
+          "funFact": "Sockeye salmon return to the exact stream where they hatched by using a combination of magnetic-field navigation in the open ocean and scent memory near the coast.",
+          "palette": {
+            "R": "#C53A2A",
+            "P": "#E08070",
+            "K": "#1C1C1C",
+            "W": "#F0E6D6"
+          },
+          "solution": [
+            "...............",
+            ".......RR......",
+            "....RRRRRR.....",
+            "...RRRRRRRR....",
+            "..RRRRRRRRRR...",
+            ".RRRRRRRRRRRR..",
+            "RRPPPPPPPPPRRRR",
+            "WKRRRRRRRRRRRRR",
+            ".RRRRRRRRRRRR..",
+            "..RRRRRRRRRR...",
+            "...RRRRRRRR.RR.",
+            "....RRRRRR..R..",
+            ".....RRRR......",
+            "......RR.......",
+            "..............."
+          ]
+        },
+        {
+          "id": 11,
+          "name": "Black Bear",
+          "size": 15,
+          "funFact": "Black bears can smell food from over a mile away — their olfactory bulb is roughly five times larger than a human's, making their sense of smell among the keenest of any land mammal.",
+          "palette": {
+            "K": "#1C1C1C",
+            "T": "#8A6A3A",
+            "W": "#F0E6D6"
+          },
+          "solution": [
+            "...............",
+            "..KK.......KK..",
+            ".KKKK.....KKKK.",
+            ".KKKK.....KKKK.",
+            "..KKKKKKKKKKK..",
+            ".KKKKKKKKKKKKK.",
+            "KKKWKKKKKKKWKKK",
+            "KKKWWKKTKKWWKKK",
+            "KKKKKKTTTKKKKKK",
+            "KKKKKKKTKKKKKKK",
+            "KKKKKKKKKKKKKKK",
+            "KKKKKKKKKKKKKKK",
+            ".KKKKKKKKKKKKK.",
+            "..KKK.....KKK..",
+            "..KKK.....KKK.."
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Douglas Fir",
+          "size": 15,
+          "funFact": "Douglas firs are among the tallest trees on Earth — coastal specimens can exceed 100 meters, and their cones bear distinctive three-pointed bracts that look like mouse feet sticking out.",
+          "palette": {
+            "G": "#2E5D3A",
+            "D": "#1E3D24",
+            "B": "#5D3A1F"
+          },
+          "solution": [
+            ".......G.......",
+            "......GGG......",
+            ".....GDGDG.....",
+            "....GGDGDGG....",
+            "...GGGDGDGGG...",
+            "....GGGGGGG....",
+            "...GGDGGGDGG...",
+            "..GGGDGGGDGGG..",
+            ".GGGGDGGGDGGGG.",
+            "..GGGGGGGGGGG..",
+            ".GGGDGGGGGDGGG.",
+            "GGGGDGGGGGDGGGG",
+            "GGGGGGGGGGGGGGG",
+            "......BBB......",
+            "......BBB......"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Tropical Rainforest",
+      "targetPuzzleCount": 8,
+      "puzzles": [
+        {
+          "id": 13,
+          "name": "Toucan",
+          "size": 20,
+          "funFact": "A toucan's huge bill is laced with blood vessels that act as a radiator — it can dump heat or retain it to regulate body temperature, working much like an elephant's ears.",
+          "palette": {
+            "K": "#1C1C1C",
+            "Y": "#F0C038",
+            "O": "#E04A1A",
+            "W": "#F2F2F2"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "........KKKK........",
+            ".......KKKKKK.......",
+            "......KKKKKKKK......",
+            ".....KKKKKKKKKK.....",
+            "....KKKKKKKKKKKK....",
+            "....KKKWWKKYYYYYY...",
+            "....KKKWWKKYYYYYYY..",
+            "....KKKKKKKYYYYYOO..",
+            "....KKKKKKKYYYYOO...",
+            "....KKKKKKKKYYO.....",
+            "....KKKKKKKKK.......",
+            "....KKKKKKKKK.......",
+            "....KKKKKKKKK.......",
+            ".....KKKKKKK........",
+            ".....KKKKKKK........",
+            "......KK.KK.........",
+            "......KK.KK.........",
+            "...................."
+          ]
+        },
+        {
+          "id": 14,
+          "name": "Sloth",
+          "size": 20,
+          "funFact": "Sloths are so sedentary that algae grow in their fur, giving them a greenish tint and providing camouflage; entire ecosystems of moths and beetles live in a single sloth's coat.",
+          "palette": {
+            "B": "#6B4A2A",
+            "T": "#9A7A4A",
+            "K": "#1C1C1C",
+            "G": "#3A6B2E"
+          },
+          "solution": [
+            "....................",
+            "......GGGGGG........",
+            ".....GGGGGGGG.......",
+            "....BBBBBBBBBB......",
+            "...BBTTTTTTTTBB.....",
+            "...BTKTTTTTTKTB.....",
+            "...BTTTTTTTTTTB.....",
+            "...BBTTTTTTTTBB.....",
+            "....BBBBBBBBBB......",
+            "....B..........B....",
+            "....B..........B....",
+            "....B..........B....",
+            "....B..........B....",
+            "....B..........B....",
+            "....B..........B....",
+            "...BB..........BB...",
+            "..BBB..........BBB..",
+            ".BBB............BBB.",
+            "..B..............B..",
+            "...................."
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Jaguar",
+          "size": 20,
+          "funFact": "Jaguars have the strongest bite force of any big cat relative to size, powerful enough to crush turtle shells and pierce skulls — they kill by biting through the brain rather than the throat.",
+          "palette": {
+            "Y": "#D6A93A",
+            "K": "#1C1C1C",
+            "W": "#F0E6D6"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "...YYY........YYY...",
+            "..YYYYY......YYYYY..",
+            ".YYYYYYYYYYYYYYYYYY.",
+            "YYKYYKYYYYYYYYKYYKYY",
+            "YYKYYKYWYYYYWYKYYKYY",
+            "YYYYYYYYYWWYYYYYYYYY",
+            "YYYKYYYYWWWWYYYYKYYY",
+            "YYYYYKYYYWWYYYKYYYYY",
+            "YYYYYYYYYYYYYYYYYYYY",
+            "YYKYYYKYYYYYKYYYKYYY",
+            ".YYYYYYYYYYYYYYYYYY.",
+            "..YYKYYKYYYYKYYKYY..",
+            "...YYYYYYYYYYYYYY...",
+            "...YYYYYYYYYYYYYY...",
+            "...YK.YK..YK.YK.....",
+            "...YK.YK..YK.YK.....",
+            "....................",
+            "...................."
+          ]
+        },
+        {
+          "id": 16,
+          "name": "Macaw",
+          "size": 20,
+          "funFact": "Scarlet macaws can live more than 75 years in captivity and form lifelong pair bonds, often flying wing-to-wing through the canopy with their mate for decades.",
+          "palette": {
+            "R": "#C53A1E",
+            "Y": "#F0C038",
+            "B": "#2A6BC5",
+            "K": "#1C1C1C",
+            "W": "#F2F2F2"
+          },
+          "solution": [
+            "....................",
+            "........RRRR........",
+            ".......RRRRRR.......",
+            "......RRWKWRRR......",
+            "......RRWKWRRR......",
+            ".....RRRRRRRRR......",
+            ".....KKRRRRRRR......",
+            "....RRRRRRRRRRR.....",
+            "...RRRRRRRRRRRRR....",
+            "..RRRRRYYYYYRRRRR...",
+            ".RRRRRYYYYYYYRRRRR..",
+            "RRRRRYYYYYYYYYRRRRR.",
+            "RRRYYYBBBBBYYYYRRR..",
+            "RRYYBBBBBBBBBYYRR...",
+            ".RYBBBBBBBBBBBYR....",
+            "..YBBBBBBBBBBBY.....",
+            "...BBBBBBBBBBB......",
+            "....BBBBBBBBB.......",
+            ".....BBBBBBB........",
+            "......BB.BB........."
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Tree Frog",
+          "size": 20,
+          "funFact": "Red-eyed tree frogs flash their startling crimson eyes and blue flanks when disturbed — a defensive trick called startle coloration that confuses predators long enough for the frog to leap away.",
+          "palette": {
+            "G": "#3DAA3D",
+            "R": "#C53A2A",
+            "W": "#F2F2F2",
+            "K": "#1C1C1C",
+            "B": "#2A6BC5"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "....GGGG..GGGG......",
+            "...GWWWGGGWWWG......",
+            "..GWRRWGGWRRWG......",
+            "..GWRKWGGWRKWG......",
+            "..GWWWGGGGWWWG......",
+            "...GGGGGGGGGG.......",
+            "..GGGGGGGGGGGG......",
+            ".GGGGGGGGGGGGGG.....",
+            ".GGGGGGGGGGGGGG.....",
+            "GGGGBGGGGGGGGBGGG...",
+            "GGGBBGGGGGGGGBBGG...",
+            "GGBBGGGGGGGGGGBBG...",
+            ".GGGGGGGGGGGGGGG....",
+            "..GGGGGGGGGGGGG.....",
+            "...GGGGGGGGGGG......",
+            "....GGGGGGGGG.......",
+            ".....GGGGGGG........",
+            "...................."
+          ]
+        },
+        {
+          "id": 18,
+          "name": "Anaconda",
+          "size": 20,
+          "funFact": "Green anacondas are the heaviest snakes on Earth, capable of exceeding 200 kg; they're aquatic ambush hunters that can stay submerged for up to ten minutes waiting for prey.",
+          "palette": {
+            "G": "#3A6B2E",
+            "D": "#1E3D24",
+            "Y": "#D6A93A",
+            "K": "#1C1C1C"
+          },
+          "solution": [
+            "....................",
+            "...GGGGGG...........",
+            "..GGGGGGGG..........",
+            ".GGDGGDGGGG.........",
+            ".GGGGGGGGGG.........",
+            ".GGKGGKGGGG.........",
+            ".GGGGGGGGGG.GGGGG...",
+            "..GGGGGGGGGGGGGGGG..",
+            "....GGGGGGGGGGGGGGG.",
+            "GGGGGDGGYDGGYDGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGGGGYGGDYGGDYGGGGGG",
+            "GGGGGGGGGGGGGGGG....",
+            "..GGGGGGGGGGGGGGG...",
+            "...GGGGGGGGGGGGGGG..",
+            "...........GGGGGGGGG",
+            ".............GGGGGGG",
+            "...............GGGGG",
+            "................GGG.",
+            "...................."
+          ]
+        },
+        {
+          "id": 19,
+          "name": "Tarantula",
+          "size": 20,
+          "funFact": "Goliath birdeater tarantulas of the Amazon can span a dinner plate; despite the name they rarely eat birds, preferring insects, frogs, and the occasional unlucky rodent.",
+          "palette": {
+            "K": "#1C1C1C",
+            "B": "#5D3A1F",
+            "R": "#C53A2A"
+          },
+          "solution": [
+            "....................",
+            "K..................K",
+            "KK................KK",
+            ".KK..............KK.",
+            "..KK............KK..",
+            "...KKK........KKK...",
+            "....KKKBBBBBBKKK....",
+            "...KKKKBBBBBBKKKK...",
+            "..KKKKBBKBBKBBKKKK..",
+            "..KKKKBBBBBBBBKKKK..",
+            "..KKKKBBKKKKBBKKKK..",
+            "..KKKKBBBBBBBBKKKK..",
+            "..KKKKBBRRRRBBKKKK..",
+            "...KKKKBBBBBBKKKK...",
+            "....KKKBBBBBBKKK....",
+            "...KKK........KKK...",
+            "..KK............KK..",
+            ".KK..............KK.",
+            "KK................KK",
+            "K..................K"
+          ]
+        },
+        {
+          "id": 20,
+          "name": "Hummingbird",
+          "size": 20,
+          "funFact": "Hummingbirds can hover by beating their wings up to 80 times per second, and their hearts pump over 1,200 beats per minute during flight — the highest heart rate of any vertebrate.",
+          "palette": {
+            "G": "#2E8B4A",
+            "R": "#C53A2A",
+            "K": "#1C1C1C",
+            "P": "#E090C0"
+          },
+          "solution": [
+            "....................",
+            "..............KKK...",
+            "..............KKKK..",
+            ".............GGGGK..",
+            "............GGGGGK..",
+            "...........GGGGGG...",
+            "..........GGGGGGG...",
+            ".........GGRRRGGGG..",
+            "GG......GGRRRRGGGGG.",
+            "GGGG...GGGRRRGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGG.",
+            ".GGGGGGGGGGGGGGGGG..",
+            "..GGGGGGGGGGGGGGG...",
+            "....GGGGGGGGGGG.....",
+            ".......GGGGG........",
+            ".......GG..G........",
+            "........G..G........",
+            "........G..G........",
+            "...PPP..P..PPP......"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 3,
+  "id": 2,
+  "name": "Grassland",
+  "stages": [
+    {
+      "id": 1,
+      "name": "Pampas",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 1,
+          "name": "Field Mouse",
+          "size": 5,
+          "funFact": "Field mice are excellent jumpers and can leap distances many times their own body length to escape predators. They build intricate burrow systems with separate chambers for nesting, food storage, and waste.",
+          "palette": {
+            "K": "#6D4C41",
+            "P": "#F8BBD0"
+          },
+          "solution": [
+            "K...K",
+            "KKKKK",
+            "KPKPK",
+            ".KKKK",
+            "....K"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Grasshopper",
+          "size": 5,
+          "funFact": "Grasshoppers can leap up to 20 times the length of their own body, propelled by powerful hind legs that store elastic energy like a spring. Their ears are located on their abdomen, not their head.",
+          "palette": {
+            "G": "#558B2F",
+            "K": "#1B5E20"
+          },
+          "solution": [
+            "....G",
+            ".GGGG",
+            "GGGGG",
+            "K.KGK",
+            "K...."
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Burrowing Owl",
+          "size": 5,
+          "funFact": "Unlike most owls, burrowing owls live underground in burrows dug by other animals such as prairie dogs or armadillos. They are active during the day and famously line their burrow entrances with animal dung to attract beetles for food.",
+          "palette": {
+            "K": "#795548",
+            "Y": "#FFEB3B"
+          },
+          "solution": [
+            ".KKK.",
+            "KYKYK",
+            "KKKKK",
+            ".KKK.",
+            ".K.K."
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Armadillo",
+          "size": 5,
+          "funFact": "The armadillo is the only mammal whose body is covered by a hard, bony shell made of keratin plates. The three-banded armadillo of the Pampas can roll itself into a perfect ball for protection.",
+          "palette": {
+            "K": "#8D6E63",
+            "B": "#5D4037"
+          },
+          "solution": [
+            "..KK.",
+            ".KKBB",
+            "KBBBB",
+            "KBBBB",
+            "K.KK."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Steppe",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 5,
+          "name": "Marmot",
+          "size": 10,
+          "funFact": "Marmots are the largest members of the squirrel family and hibernate for up to nine months of the year, surviving on fat reserves built up during summer. They communicate with loud, sharp whistles to warn the colony of predators.",
+          "palette": {
+            "K": "#8D6E63",
+            "B": "#3E2723",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "..KKKK....",
+            ".KKKKKK...",
+            ".KWBBWK...",
+            ".KKKBKK...",
+            ".KKKKKK...",
+            "KKKKKKKK..",
+            "KKKKKKKKK.",
+            "KKKKKKKKKK",
+            "KK....KKKK",
+            "KK....KK.."
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Saiga Antelope",
+          "size": 10,
+          "funFact": "The saiga antelope has an unmistakable bulbous, downward-pointing nose that filters dust in summer and warms freezing air in winter. Once numbering in the millions, saiga are now critically endangered due to poaching and disease.",
+          "palette": {
+            "T": "#D7B17A",
+            "K": "#6D4C41"
+          },
+          "solution": [
+            ".K........",
+            ".KT.......",
+            ".TTTK.....",
+            ".TTTTK....",
+            "TTTTTTTK..",
+            "TTTTTTTTK.",
+            "TTTTTTTTT.",
+            "TTTTTTTTT.",
+            ".T.TT.T.T.",
+            ".T.TT.T.T."
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Steppe Eagle",
+          "size": 10,
+          "funFact": "The steppe eagle has one of the longest migrations of any raptor, traveling from Central Asia to Africa each winter. It often hunts ground squirrels and marmots, and is known to gather in flocks at carrion sites.",
+          "palette": {
+            "K": "#4E342E",
+            "B": "#3E2723",
+            "Y": "#FBC02D"
+          },
+          "solution": [
+            "..........",
+            ".K......K.",
+            "KK......KK",
+            "KKK....KKK",
+            "KKKKYYKKKK",
+            "KKKKBBKKKK",
+            ".KKKKKKKK.",
+            "..KKKKKK..",
+            "...K..K...",
+            ".........."
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Przewalski's Horse",
+          "size": 10,
+          "funFact": "Przewalski's horse is the last truly wild horse species and was once extinct in the wild. Through captive breeding and reintroduction programs, herds now roam the Mongolian steppe again, with a distinctive upright black mane.",
+          "palette": {
+            "T": "#C19A6B",
+            "M": "#3E2723",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            ".......TT.",
+            "......TTTT",
+            "......TWTT",
+            ".MMMMMTTTT",
+            "TTTTTTTTT.",
+            "TTTTTTTTT.",
+            "TTTTTTTTT.",
+            "T..TTT..T.",
+            "T..TTT..T.",
+            "M..MMM..M."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Prairie",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 9,
+          "name": "Bison",
+          "size": 15,
+          "funFact": "American bison are the largest land animals in North America, with bulls weighing up to 2,000 pounds. Once numbering 30 to 60 million across the Great Plains, they were nearly hunted to extinction in the 1800s before conservation efforts brought them back.",
+          "palette": {
+            "K": "#3E2723",
+            "B": "#5D4037",
+            "W": "#EFEBE9"
+          },
+          "solution": [
+            "...............",
+            "....KKKKKK.....",
+            "...KKKKKKKK....",
+            "..WKKKKKKKKW...",
+            "...KKKKKKKK....",
+            "...KKKKKKKK....",
+            "..KKKKKKKKK....",
+            ".KKKKBBBBBBB...",
+            "KKKKBBBBBBBBB..",
+            "KKKBBBBBBBBBBBB",
+            "KKBBBBBBBBBBBBB",
+            ".KBBBBBBBBBBBB.",
+            ".K..BB...BB....",
+            ".K..BB...BB....",
+            ".K..BB...BB...."
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Pronghorn",
+          "size": 15,
+          "funFact": "The pronghorn is the fastest land animal in the Americas and the second fastest in the world, capable of sustaining 55 mph for miles. Its speed is thought to be an evolutionary adaptation to outrun the now-extinct American cheetah.",
+          "palette": {
+            "K": "#3E2723",
+            "T": "#C19A6B",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "...........K...",
+            "..........KK...",
+            ".....K...KK....",
+            "....KKKKKKK....",
+            "...KKKKKKKK....",
+            "...KKWKWKKK....",
+            "....KKKKKK.....",
+            "....TTTTT......",
+            "...TTTTTTT.....",
+            "..TTTTTTTTT....",
+            ".TTTTTTTTTTT...",
+            ".TTWWTWWTTT....",
+            ".T..T.T..T.....",
+            ".T..T.T..T.....",
+            ".K..K.K..K....."
+          ]
+        },
+        {
+          "id": 11,
+          "name": "Sunflower",
+          "size": 15,
+          "funFact": "Young sunflowers track the sun across the sky in a behavior called heliotropism. Once mature, they face permanently east, warming their faces in the morning sun to attract pollinators like bees.",
+          "palette": {
+            "Y": "#FDD835",
+            "B": "#5D4037",
+            "G": "#43A047"
+          },
+          "solution": [
+            "...............",
+            "....YYYYYYY....",
+            "...YYYYYYYYY...",
+            "..YYYBBBBBYY...",
+            "..YYBBBBBBBYY..",
+            "..YYBBBBBBBYY..",
+            "..YYBBBBBBBYY..",
+            "..YYBBBBBBBYY..",
+            "...YYBBBBBYY...",
+            "....YYYYYYY....",
+            ".......G.......",
+            ".....GGGGG.....",
+            ".......G.......",
+            ".......G.......",
+            ".......G......."
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Prairie Chicken",
+          "size": 15,
+          "funFact": "Male greater prairie chickens perform an elaborate courtship dance on traditional grounds called leks, inflating bright orange air sacs on their necks while making a deep booming call audible up to a mile away.",
+          "palette": {
+            "K": "#5D4037",
+            "O": "#F57C00",
+            "T": "#D7B17A"
+          },
+          "solution": [
+            "...............",
+            "......KKK......",
+            ".....KKKKK.....",
+            ".....KKKKK.....",
+            ".....KKKKK.....",
+            "....OOKKOO.....",
+            "...OOOKKOOO....",
+            ".....KKKKK.....",
+            "....KKKKKKK....",
+            "...KKTTTTKKK...",
+            "...KTTTTTTKK...",
+            "...KTTTTTTKK...",
+            "...KKKKKKKKK...",
+            "....K..KK..K...",
+            "....K..KK..K..."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Savanna",
+      "targetPuzzleCount": 8,
+      "puzzles": [
+        {
+          "id": 13,
+          "name": "Lion",
+          "size": 20,
+          "funFact": "A male lion's roar can be heard from up to 5 miles away and serves to warn rival males and call lost pride members. Lions are the only big cats that live in social groups, called prides, typically led by related females.",
+          "palette": {
+            "M": "#A0522D",
+            "T": "#E0B074",
+            "K": "#3E2723"
+          },
+          "solution": [
+            "....................",
+            ".....MMMMMMMMMM.....",
+            "....MMMMMMMMMMMM....",
+            "...MMMMMMMMMMMMMM...",
+            "..MMMMTTTTTTTTMMMM..",
+            "..MMMTTTTTTTTTTMMM..",
+            ".MMMMTTTTTTTTTTMMMM.",
+            ".MMMTTKTTTTTTKTTMMM.",
+            ".MMMTTTTTTTTTTTTMMM.",
+            ".MMMTTTTKKKKTTTTMMM.",
+            ".MMMMTTTTKKTTTTMMMM.",
+            "..MMMMTTTTTTTTMMMM..",
+            "...MMMMMTTTTMMMMM...",
+            "....MMMMMMMMMM......",
+            ".....TTTTTTTT.......",
+            "....TTTTTTTTTT......",
+            "....TTTTTTTTTT......",
+            "....TTTTTTTTTT......",
+            "....T..TT..T........",
+            "....T..TT..T........"
+          ]
+        },
+        {
+          "id": 14,
+          "name": "Elephant",
+          "size": 20,
+          "funFact": "African elephants are the largest land animals on Earth and have an extraordinary memory, recognizing other elephants and humans after decades apart. Their trunks contain about 40,000 muscles and can pick up something as small as a single grain of rice.",
+          "palette": {
+            "G": "#9E9E9E",
+            "K": "#424242",
+            "W": "#FAFAFA"
+          },
+          "solution": [
+            "....................",
+            "......GGGGGGGG......",
+            "....GGGGGGGGGGGG....",
+            "...GGGGGGGGGGGGGG...",
+            "..GGGGGGGGGGGGGGG...",
+            "..GGGGGGGGGGGGGGG...",
+            "..GGGGGGGGGGGGGGG...",
+            "..GGGKGGGGGGGKGGG...",
+            "..GGGGGGGGGGGGGGG...",
+            "..GGGGGGGGGGGGGGG...",
+            "...GGGGGGGGGGGGG....",
+            "....GGGGGGGGGGG.....",
+            ".....GGG..GGG.......",
+            ".WWWWGG....GG.......",
+            ".....G..............",
+            ".....G..............",
+            "....GG..............",
+            "....G.G..G.G........",
+            "....G.G..G.G........",
+            "....G.G..G.G........"
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Giraffe",
+          "size": 20,
+          "funFact": "Giraffes are the tallest mammals on Earth, with adults reaching up to 18 feet, and their hearts must pump blood with twice the force of a human heart to reach their brains. Despite their long necks, giraffes have only seven cervical vertebrae, the same as humans.",
+          "palette": {
+            "T": "#E0B074",
+            "S": "#8D5524",
+            "K": "#3E2723"
+          },
+          "solution": [
+            "....................",
+            "...........KK.......",
+            "..........TTTT......",
+            "..........TKTT......",
+            "..........TTTT......",
+            "..........TT........",
+            ".........STT........",
+            ".........TTS........",
+            ".........STT........",
+            ".........TTS........",
+            ".........STT........",
+            "........TTTSS.......",
+            ".......STTTTSS......",
+            "......TTTSSTTTT.....",
+            ".....TTSSTTTTSSTT...",
+            ".....TSSTTTTTTSST...",
+            ".....TTSSTTSSTTTT...",
+            ".....T..TT..TT......",
+            ".....T..TT..TT......",
+            ".....K..KK..KK......"
+          ]
+        },
+        {
+          "id": 16,
+          "name": "Zebra",
+          "size": 20,
+          "funFact": "Every zebra has a unique pattern of stripes, like a fingerprint, that helps them recognize each other. Recent research suggests the stripes may also confuse biting flies and disrupt their landing approach.",
+          "palette": {
+            "W": "#FAFAFA",
+            "K": "#212121",
+            "G": "#616161"
+          },
+          "solution": [
+            "....................",
+            "............KKKK....",
+            "...........KWWWK....",
+            "..........KWKWKW....",
+            "..........KWWWWK....",
+            "...........KWWKK....",
+            ".........WKWKWKW....",
+            "........WKWKWKWK....",
+            ".......KWKWKWKWK....",
+            "......KWKWKWKWKW....",
+            ".....KWKWKWKWKWKW...",
+            "....KWKWKWKWKWKWKW..",
+            "...KWKWKWKWKWKWKWKW.",
+            "..KWKWKWKWKWKWKWKWKW",
+            "..KWKWKWKWKWKWKWKW..",
+            "....W..WW..W........",
+            "....W..WW..W........",
+            "....W..WW..W........",
+            "....G..GG..G........",
+            "...................."
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Acacia Tree",
+          "size": 20,
+          "funFact": "Acacia trees have a flat, umbrella-shaped canopy ideal for casting wide shade on the savanna, and they produce defensive chemicals in their leaves when grazed. Some species form a mutualistic partnership with ants that protect the tree in exchange for shelter and nectar.",
+          "palette": {
+            "G": "#558B2F",
+            "K": "#1B5E20",
+            "B": "#6D4C41"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "....GGGGGGGGGGGG....",
+            "...GGGKKGGKKGGGGG...",
+            "..GGGGGGGGGGGGGGGG..",
+            ".GGGKKGGGGKKGGGGGGG.",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            ".GGGGKKGGGGGKKGGGGG.",
+            "..GGGGGGGGGGGGGGGG..",
+            "...GGGGGGGGGGGGGG...",
+            ".........BB.........",
+            ".........BB.........",
+            ".........BB.........",
+            ".........BB.........",
+            ".........BB.........",
+            "........BBBB........",
+            ".......BB..BB.......",
+            "......BB....BB......",
+            ".....BBBBBBBBBB....."
+          ]
+        },
+        {
+          "id": 18,
+          "name": "Hippopotamus",
+          "size": 20,
+          "funFact": "Despite their enormous size, hippos can outrun a human, reaching speeds of 19 mph on land. They secrete a reddish oily substance often called blood sweat that acts as both sunscreen and antiseptic for their sensitive skin.",
+          "palette": {
+            "G": "#78909C",
+            "P": "#5D4037",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "....................",
+            ".........GGGGGGG....",
+            "........GGGGGGGGG...",
+            ".......GGGGGGGGGGG..",
+            "......GGGGGGGGGGGG..",
+            "......GGGGGGGGGGGGG.",
+            "......GGGGGGGGGGGGG.",
+            ".......GGWGGGGWGG...",
+            ".GGGGGGGGGGGGGGGGG..",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGGGGPPPPPPPPPPGGGGG",
+            "GGGGPPPPPPPPPPPPGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            ".GGGGGGGGGGGGGGGGGG.",
+            ".GG.GGGG.GGGG.GGGG..",
+            ".GG...GG...GG...GG..",
+            ".GG...GG...GG...GG.."
+          ]
+        },
+        {
+          "id": 19,
+          "name": "Secretary Bird",
+          "size": 20,
+          "funFact": "The secretary bird hunts on foot across the savanna, killing snakes and lizards by stomping them with powerful, lightning-fast kicks that strike with five times the bird's body weight. Its name comes from the quill-like feathers on its head that resemble old-fashioned writing pens.",
+          "palette": {
+            "K": "#212121",
+            "W": "#FAFAFA",
+            "Y": "#FDD835"
+          },
+          "solution": [
+            "....................",
+            ".......KK...........",
+            "......KKKK..........",
+            "......KKKKK.........",
+            ".....YYKKKK.........",
+            "......KKKKK.........",
+            ".......KK...........",
+            ".......KK...........",
+            ".......KK...........",
+            ".......KK...........",
+            "......WWKKWW........",
+            ".....WWWKKWWW.......",
+            "....WWWWKKWWWW......",
+            "....WWWWKKWWWW......",
+            ".....WWKKKKWW.......",
+            "......KKKKKK........",
+            ".......KK...........",
+            ".......KK...........",
+            ".......KK...........",
+            "......KKKK.........."
+          ]
+        },
+        {
+          "id": 20,
+          "name": "Baobab Tree",
+          "size": 20,
+          "funFact": "Baobab trees can live for over 2,000 years and store up to 32,000 gallons of water in their massive trunks to survive the dry season. They are sometimes called upside-down trees because their bare branches resemble roots reaching for the sky.",
+          "palette": {
+            "B": "#6D4C41",
+            "G": "#558B2F",
+            "K": "#3E2723"
+          },
+          "solution": [
+            "....................",
+            "......G.G.G.........",
+            ".....GKGKGKG........",
+            "....KKKGGGKKK.......",
+            "...KK..GGG..KK......",
+            "....KKKKKKK.........",
+            "....BBBBBBB.........",
+            "...BBBBBBBBB........",
+            "..BBBBBBBBBBB.......",
+            "..BBBBBBBBBBBB......",
+            ".BBBBBBBBBBBBB......",
+            ".BBBBBBBBBBBBBB.....",
+            ".BBBBBBBBBBBBBB.....",
+            ".BBBBBBBBBBBBBB.....",
+            ".BBBBBBBBBBBBBB.....",
+            ".BBBBBBBBBBBBBB.....",
+            ".BBBBBBBBBBBBBB.....",
+            ".BBBBBBBBBBBBBB.....",
+            ".BBBBBBBBBBBBBB.....",
+            "BBBBBBBBBBBBBBBB...."
+          ]
+        }
+      ]
+    }
+  ]
+}

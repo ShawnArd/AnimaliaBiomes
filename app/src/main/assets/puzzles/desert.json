@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 3,
+  "id": 4,
+  "name": "Desert",
+  "stages": [
+    {
+      "id": 1,
+      "name": "Semi-Arid",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 1,
+          "name": "Jackrabbit",
+          "size": 5,
+          "funFact": "Jackrabbits are actually hares, not rabbits. Their oversized ears act as radiators, releasing body heat to keep them cool in the semi-arid Great Basin.",
+          "palette": {
+            "B": "#8B6F47",
+            "W": "#F5E6D3"
+          },
+          "solution": [
+            "B.B..",
+            "BBB..",
+            ".BBBB",
+            "WBBB.",
+            "B.BB."
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Burrowing Owl",
+          "size": 5,
+          "funFact": "Burrowing Owls live in underground tunnels, often taking over abandoned prairie dog or ground squirrel burrows. They are one of the smallest owls in North America.",
+          "palette": {
+            "B": "#8B6F47",
+            "Y": "#FFD54F",
+            "K": "#212121"
+          },
+          "solution": [
+            ".BBB.",
+            "BYKYB",
+            "BBKBB",
+            ".BBB.",
+            "B...B"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Horned Lizard",
+          "size": 5,
+          "funFact": "Horned Lizards can squirt blood from their eyes as a defense against predators. The stream can reach up to five feet and tastes foul to canines.",
+          "palette": {
+            "T": "#C19A6B",
+            "K": "#4E342E"
+          },
+          "solution": [
+            "K.T.K",
+            "TTTTT",
+            "TTKTT",
+            "TTTTT",
+            ".T.T."
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Sagebrush",
+          "size": 5,
+          "funFact": "Sagebrush dominates the Great Basin and releases a distinctive aromatic oil that helps it conserve water and deter herbivores in the semi-arid landscape.",
+          "palette": {
+            "G": "#6B8E5A",
+            "B": "#6D4C41"
+          },
+          "solution": [
+            "G.G.G",
+            "GGGGG",
+            ".GGG.",
+            "..B..",
+            "..B.."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Coastal Desert",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 5,
+          "name": "Humboldt Penguin",
+          "size": 10,
+          "funFact": "Humboldt Penguins live along the cold, foggy coasts of Peru and Chile, nesting in guano deposits. They are named after the cold Humboldt Current that flows past the Atacama Desert.",
+          "palette": {
+            "K": "#212121",
+            "W": "#F5F5F5",
+            "O": "#FB8C00"
+          },
+          "solution": [
+            "...KKK....",
+            "..KKWKK...",
+            "..KOWKK...",
+            "..KWWWK...",
+            "..KWWWKK..",
+            "..KWWWWK..",
+            "..KWWWWK..",
+            "..KWWWWK..",
+            "..KKKKKK..",
+            "..KK..KK.."
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Pelican",
+          "size": 10,
+          "funFact": "Pelicans have a stretchy throat pouch that can hold up to three gallons of water, which they use to scoop fish from the sea before draining the water and swallowing.",
+          "palette": {
+            "W": "#F5F5F5",
+            "Y": "#FBC02D",
+            "K": "#424242"
+          },
+          "solution": [
+            "..........",
+            ".....WWW..",
+            "....WWWWW.",
+            "...WWWWWWW",
+            "..YWWWWWW.",
+            ".YYWWWWW..",
+            "YYYWWWW...",
+            "..YWW.....",
+            "...K.K....",
+            "...K.K...."
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Welwitschia",
+          "size": 10,
+          "funFact": "Welwitschia plants of the Namib Desert can live over 1,000 years and grow only two leaves their entire lifetime, which split and tatter into many ribbon-like strands.",
+          "palette": {
+            "G": "#6B8E5A",
+            "B": "#8D6E63",
+            "S": "#D7CCC8"
+          },
+          "solution": [
+            "..........",
+            "G.G....G.G",
+            "GGG....GGG",
+            "GGGG..GGGG",
+            "GGGGBBGGGG",
+            "GGGGBBGGGG",
+            "GGGG..GGGG",
+            "GGG....GGG",
+            "G.G....G.G",
+            "SSSSSSSSSS"
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Darkling Beetle",
+          "size": 10,
+          "funFact": "Namib Desert darkling beetles do a headstand on dune crests at dawn so fog condenses on their backs and trickles down to their mouths — a vital water source in one of Earth's driest places.",
+          "palette": {
+            "K": "#212121",
+            "B": "#4E342E"
+          },
+          "solution": [
+            "K........K",
+            ".K......K.",
+            "..KKBBKK..",
+            ".KKKBBKKK.",
+            "KKKKBBKKKK",
+            "KKKKBBKKKK",
+            ".KKKBBKKK.",
+            "..KKBBKK..",
+            ".K......K.",
+            "K........K"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Hot and Dry",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 9,
+          "name": "Saguaro Cactus",
+          "size": 15,
+          "funFact": "Saguaro cacti can live over 150 years and grow up to 40 feet tall. They don't sprout their first arm until they are roughly 75 years old.",
+          "palette": {
+            "G": "#558B2F",
+            "D": "#33691E",
+            "Y": "#FFEE58"
+          },
+          "solution": [
+            "...............",
+            "....Y.......Y..",
+            "...GGG.....GGG.",
+            "...GDG.....GDG.",
+            "...GGG.GGG.GGG.",
+            "...GGGGGGGGGGG.",
+            "...GGGGGGGGGGG.",
+            "...GGGGGDDGGGG.",
+            "......GGGGG....",
+            "......GGGGG....",
+            "......GGGGG....",
+            "......GGDGG....",
+            "......GGGGG....",
+            "......GGGGG....",
+            ".....DDDDDDD..."
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Camel",
+          "size": 15,
+          "funFact": "A camel's single hump stores up to 80 pounds of fat, which it metabolizes for energy and water when food is scarce — not water as is commonly believed.",
+          "palette": {
+            "B": "#A1887F",
+            "D": "#6D4C41",
+            "K": "#212121"
+          },
+          "solution": [
+            "...............",
+            "..............B",
+            "..BBB........BB",
+            ".BBBBB.......BB",
+            "BBDDDBB.....BBB",
+            "BDDDDDBBBBBBBBB",
+            "BBBDDBBBBBBBBBB",
+            ".BBBBBBBBBBBBBB",
+            "..BBBBBBBBBBBKB",
+            "..BBBBBBBBBBKKB",
+            "..B..B..B..B...",
+            "..B..B..B..B...",
+            "..B..B..B..B...",
+            "..B..B..B..B...",
+            ".DD..DD.DD..DD."
+          ]
+        },
+        {
+          "id": 11,
+          "name": "Fennec Fox",
+          "size": 15,
+          "funFact": "Fennec foxes have ears up to 6 inches long — the largest ear-to-body ratio of any canid. The ears dissipate heat and pick up the faint sounds of prey moving underground.",
+          "palette": {
+            "S": "#FFD180",
+            "W": "#FFF8E1",
+            "K": "#212121"
+          },
+          "solution": [
+            "...S.......S...",
+            "..SSS.....SSS..",
+            ".SSWS.....SWSS.",
+            ".SSWSS...SSWSS.",
+            "..SSSSSSSSSSS..",
+            "..SSSSSSSSSSS..",
+            "..SSSWSSSWSSS..",
+            "..SSWKSSSKWSS..",
+            "..SSSSSKSSSSS..",
+            "...SSWWWWWSS...",
+            "....SSSSSSS....",
+            ".....SSSSS.....",
+            ".....SSSSS.....",
+            "......SSS......",
+            "......SSS......"
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Scorpion",
+          "size": 15,
+          "funFact": "Scorpions glow bright blue-green under ultraviolet light because of compounds in their exoskeleton. Scientists still aren't sure exactly why they fluoresce.",
+          "palette": {
+            "K": "#212121",
+            "B": "#5D4037",
+            "Y": "#FBC02D"
+          },
+          "solution": [
+            "...............",
+            "BB...........BB",
+            "BBB.........BBB",
+            ".BB.........BB.",
+            ".BBB.......BBB.",
+            "..BBBB...BBBB..",
+            "...BBBKKKBBB...",
+            "...BBKKKKKBB...",
+            "....BKKKKKB....",
+            "....BBKKKBB....",
+            ".....BBKBB.....",
+            "......BKB......",
+            ".....BBKBB.....",
+            "....BBYYYBB....",
+            "....Y.....Y...."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cold Desert",
+      "targetPuzzleCount": 8,
+      "puzzles": [
+        {
+          "id": 13,
+          "name": "Bactrian Camel",
+          "size": 20,
+          "funFact": "Bactrian camels of the Gobi have two humps and a thick, shaggy winter coat that they shed in summer. They can drink 30 gallons of water in just 13 minutes.",
+          "palette": {
+            "B": "#8D6E63",
+            "D": "#5D4037",
+            "K": "#212121"
+          },
+          "solution": [
+            "....................",
+            "...................B",
+            "..................BB",
+            "...BBB....BBB.....BB",
+            "..BBBBB..BBBBB...BBB",
+            "..BDDDB.BDDDB...BBBB",
+            ".BDDDDDBDDDDDB.BBBBB",
+            ".BBDDDBBBDDDDBBBBKBB",
+            ".BBBBBBBBBBBBBBBBKKB",
+            "..BBBBBBBBBBBBBBBBKB",
+            "..BBBBBBBBBBBBBBBBBB",
+            "..BBBBBBBBBBBBBBBBB.",
+            "..B..B....B..B......",
+            "..B..B....B..B......",
+            "..B..B....B..B......",
+            "..B..B....B..B......",
+            "..B..B....B..B......",
+            "..B..B....B..B......",
+            ".DD..DD..DD..DD.....",
+            "...................."
+          ]
+        },
+        {
+          "id": 14,
+          "name": "Snow Leopard",
+          "size": 20,
+          "funFact": "Snow Leopards have tails nearly as long as their bodies — they wrap them around themselves like a scarf for warmth and use them for balance on steep mountain crags.",
+          "palette": {
+            "W": "#ECEFF1",
+            "G": "#90A4AE",
+            "K": "#212121"
+          },
+          "solution": [
+            "....................",
+            "...WW............WW.",
+            "..WWWW..........WWWW",
+            "..WKWW..........WWKW",
+            ".WWWWWW........WWWWW",
+            ".WKWGWWWWWWWWWWWGWKW",
+            ".WWWWWWWWWWWWWWWWWWW",
+            ".WWGWWGWWWWWWGWWGWWW",
+            ".WWWWWWWWWWWWWWWWWWW",
+            "..WWWWWWWWWWWWWWWWW.",
+            "...WWGWWGWWGWWGWWW..",
+            "...WWWWWWWWWWWWWWW..",
+            "...WWGWWWGWWGWWWGW..",
+            "...WWWWWWWWWWWWWWW..",
+            "....W.W....W.W...W..",
+            "....W.W....W.W...WW.",
+            "....W.W....W.W....WW",
+            "....W.W....W.W...WWW",
+            "....W.W....W.W..WWGW",
+            "....W.W....W.W...WW."
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Pallas's Cat",
+          "size": 20,
+          "funFact": "Pallas's Cats have the densest fur of any felid — up to 9,000 hairs per square centimeter — to survive the harsh Central Asian steppe winters where temperatures drop below -40°C.",
+          "palette": {
+            "G": "#A1887F",
+            "W": "#EFEBE9",
+            "K": "#212121"
+          },
+          "solution": [
+            "....................",
+            "....GG........GG....",
+            "...GGGG......GGGG...",
+            "..GGGWGG....GGWGGG..",
+            "..GGGWGGGGGGGGWGGG..",
+            ".GGGGGGGGGGGGGGGGGG.",
+            ".GGGWWGGGGGGGGWWGGG.",
+            ".GGGKWGGGWWGGGWKGGG.",
+            ".GGGGGGGGWWGGGGGGGG.",
+            ".GGGGGGWGGGGWGGGGGG.",
+            ".GGGGGGGGKKGGGGGGGG.",
+            "..GGGGGWWWWWWGGGGG..",
+            "...GGGGGGGGGGGGGG...",
+            "....GGGGGGGGGGGG....",
+            "....GGWGGWGGWGGW....",
+            "....GGGGGGGGGGGG....",
+            "....GGWGGWGGWGGW....",
+            "....GGGGGGGGGGGG....",
+            ".....GGGGGGGGGG.....",
+            "......GG....GG......"
+          ]
+        },
+        {
+          "id": 16,
+          "name": "Saxaul Tree",
+          "size": 20,
+          "funFact": "Saxaul trees of the Gobi store water in their bark — pressing it releases drinkable liquid. Their deep roots anchor desert sands and prevent the spread of dunes.",
+          "palette": {
+            "B": "#6D4C41",
+            "G": "#7CB342",
+            "D": "#3E2723"
+          },
+          "solution": [
+            "...G......G.G.......",
+            "..GGG....GGGGG......",
+            "..GGGG..GGGGGG..GG..",
+            "...GGG..GGGGG..GGG..",
+            "....GG..GG..G.GGGG..",
+            ".....BB.B..BBGGG....",
+            "......BBB.BBB.B.....",
+            ".......BBBBB.BB.....",
+            "......BBDBB.BBB.....",
+            "......BDDBBBBB......",
+            ".......BBDDDB.......",
+            ".......BDDDB........",
+            ".......BBDDB........",
+            "........BDDB........",
+            "........BDDB........",
+            ".......BBDDBB.......",
+            "......BBDDDDBB......",
+            ".....BBDDDDDDBB.....",
+            "....DDDDDDDDDDDD....",
+            "...DDDDDDDDDDDDDD..."
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Steppe Eagle",
+          "size": 20,
+          "funFact": "Steppe Eagles migrate over 5,000 miles between Central Asian breeding grounds and African wintering grounds, soaring on thermals to conserve energy across vast distances.",
+          "palette": {
+            "B": "#5D4037",
+            "D": "#3E2723",
+            "Y": "#FFB300"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "BB................BB",
+            "BBBB............BBBB",
+            "BBBBBB........BBBBBB",
+            "BBBBBBBB....BBBBBBBB",
+            "BBBBBBBBBBBBBBBBBBBB",
+            ".BBBBBBBBDDBBBBBBBB.",
+            "..BBBBBBBBDBBBBBBBB.",
+            "...BBBBBBBDBBBBBBB..",
+            "....BBBBBBDBBBBBB...",
+            ".......BBBYBBB......",
+            "........BBYBB.......",
+            "........BYYYB.......",
+            ".........BDB........",
+            ".........BDB........",
+            ".........BDB........",
+            "........YBBBY.......",
+            "........Y...Y.......",
+            "...................."
+          ]
+        },
+        {
+          "id": 18,
+          "name": "Argali Sheep",
+          "size": 20,
+          "funFact": "Argali are the largest wild sheep on Earth. The horns of an adult male can weigh over 50 pounds — sometimes more than 10% of the animal's total body weight.",
+          "palette": {
+            "B": "#A1887F",
+            "W": "#EFEBE9",
+            "D": "#5D4037"
+          },
+          "solution": [
+            "....................",
+            ".....DDDD..DDDD.....",
+            "....DDDDD..DDDDD....",
+            "...DDD..D..D..DDD...",
+            "..DD..BBBBBBBB..DD..",
+            "..D..BBWBBBBWBB..D..",
+            "..D..BBBBBBBBBB..D..",
+            "..DD.BBBBBBBBBB.DD..",
+            "...DDDBBBBBBBBDDD...",
+            "....DDDBBBBBBDDD....",
+            "BBBBBBBBBBBBBBBBBBBB",
+            "BWWBBBBBBBBBBBBBBWWB",
+            "BBBBBBBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBBBBBBB",
+            ".BBBBBBBBBBBBBBBBBB.",
+            ".BB..BBBB..BBBB..BB.",
+            ".BB..BBBB..BBBB..BB.",
+            ".BB..BBBB..BBBB..BB.",
+            ".DD..DDDD..DDDD..DD."
+          ]
+        },
+        {
+          "id": 19,
+          "name": "Long-eared Jerboa",
+          "size": 20,
+          "funFact": "The long-eared jerboa has ears one third larger than its head and hops on long hind legs like a tiny kangaroo, traveling vast distances across the Gobi at night.",
+          "palette": {
+            "S": "#D7B98C",
+            "W": "#FFF8E1",
+            "K": "#212121"
+          },
+          "solution": [
+            "....................",
+            "..S..............S..",
+            ".SS..............SS.",
+            ".SS..............SS.",
+            "..SS............SS..",
+            "...SSS........SSS...",
+            "....SSSSSSSSSSSS....",
+            "...SSSWSSSSWSSSS....",
+            "...SSWKSSSSKWSSS....",
+            "...SSSSSKKSSSSSS....",
+            "....SSSSSSSSSSS.....",
+            ".....SSSSSSSSS......",
+            ".....SSSSSSSSSS.....",
+            "......SSSSSSSSSS....",
+            ".......SSSSSSSSSSS..",
+            "........SSSSSSSSSSSS",
+            "........S.S........S",
+            "........S.S.........",
+            "........S.S.........",
+            ".......WW.WW........"
+          ]
+        },
+        {
+          "id": 20,
+          "name": "Ibex",
+          "size": 20,
+          "funFact": "Ibex can scale near-vertical cliff faces and even climb up dam walls in search of mineral salts. Their split, rubbery hooves grip rock like climbing shoes.",
+          "palette": {
+            "B": "#8D6E63",
+            "D": "#3E2723",
+            "W": "#EFEBE9"
+          },
+          "solution": [
+            "....................",
+            ".............DD.....",
+            "............DDDD....",
+            "...........DDDDD....",
+            "..........DDD..D....",
+            ".........DDD...D....",
+            "........DDD....D....",
+            ".......DDD....DD....",
+            "......DDD....DD.....",
+            ".....BBBBBBBBB......",
+            "....BBBBBBBBBB......",
+            "...BBWBBBBBBBBBBBBBB",
+            "...BBBBBBBBBBBBBBBBB",
+            "...BBBBBBBBBBBBBBBBB",
+            "....BBBBBBBBBBBBBBB.",
+            "....BBBBBBBBBBBBBBB.",
+            "....BB..BB..BB..BB..",
+            "....BB..BB..BB..BB..",
+            "....BB..BB..BB..BB..",
+            "....DD..DD..DD..DD.."
+          ]
+        }
+      ]
+    }
+  ]
+}
