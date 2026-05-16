@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 3,
+  "id": 1,
+  "name": "Aquatic",
+  "stages": [
+    {
+      "id": 1,
+      "name": "Intertidal",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 1,
+          "name": "Seagull",
+          "size": 5,
+          "funFact": "Seagull droppings are called “Guano”.\nGuano has been used as fertilizer for plants and crops for centuries. Consisting primarily of nitrogen-rich ammonia salts, guano provides essential nutrients to the soil",
+          "palette": {
+            "O": "#F57C00",
+            "K": "#f8f8f8"
+          },
+          "solution": [
+            ".K...",
+            "OK..K",
+            ".KKK.",
+            ".KKK.",
+            "..O.."
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Crab",
+          "size": 5,
+          "funFact": "Crabs can walk in all four directions, but they prefer to walk sideways.",
+          "palette": { "R": "#C62828" },
+          "solution": [
+            "R.R.R",
+            "RRRRR",
+            ".RRR.",
+            "RRRRR",
+            ".R.R."
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Clam",
+          "size": 5,
+          "funFact": "Clams can live in both freshwater and marine environments. And are also known for their unique ability to filter up to 4.5 gallons of water a day, helping to purify their surroundings.",
+          "palette": {
+            "O": "#ffd8b0"
+          },
+          "solution": [
+            ".OOO.",
+            "O...O",
+            ".OOO.",
+            "O...O",
+            ".OOO."
+          ]
+        },
+        {
+          "id": 4,
+          "name": "sculpin",
+          "size": 5,
+          "funFact": "Sculpin are typically small, bottom-dwelling fish known for their large heads and fanlike pectoral fins.",
+          "palette": {
+            "O": "#598222",
+            "K": "#d9f1cd",
+            "W": "#1b1b1b"
+          },
+          "solution": [
+            "..O..",
+            ".OO.O",
+            "O..WW",
+            ".KO.O",
+            "..K.."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Neritic",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 5,
+          "name": "Octopus",
+          "size": 10,
+          "funFact": "Octopuses have three hearts and blue, copper-based blood. Two hearts pump blood through the gills, while the third circulates it to the rest of the body.",
+          "palette": {
+            "P": "#B0418A",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "...PPPP...",
+            "..PPPPPP..",
+            ".PPWPPWPP.",
+            ".PPPPPPPP.",
+            "..PPPPPP..",
+            ".P.P..P.P.",
+            "P.P.PP.P.P",
+            "P.P.PP.P.P",
+            ".P.PPPP.P.",
+            "..P....P.."
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Jellyfish",
+          "size": 10,
+          "funFact": "Jellyfish have existed for over 500 million years, predating dinosaurs, and they have no brain, heart, or bones.",
+          "palette": {
+            "P": "#E48BD3",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "..PPPPPP..",
+            ".PPPPPPPP.",
+            "PPPPPPPPPP",
+            "PWWPPPPWWP",
+            "PPPPPPPPPP",
+            ".P.P.P.P.P",
+            "P.P.P.P.P.",
+            ".P.P.P.P.P",
+            "P.P.P.P.P.",
+            ".P.P.P.P.P"
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Seahorse",
+          "size": 10,
+          "funFact": "Seahorses are the only animals in which the male becomes pregnant, carrying the developing eggs in a specialized brood pouch.",
+          "palette": {
+            "Y": "#F2B33C",
+            "K": "#2A2A2A"
+          },
+          "solution": [
+            "..YYY.....",
+            ".YYYYY....",
+            ".YYKYY....",
+            ".YYYYYY...",
+            "....YYY...",
+            "...YYY....",
+            "..YYY.....",
+            "..YYYY....",
+            "...YYYY...",
+            "....YYY..."
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Sea Turtle",
+          "size": 10,
+          "funFact": "Sea turtles can hold their breath for hours when resting, and females return to the very beach where they hatched to lay their own eggs.",
+          "palette": {
+            "G": "#3E8B4A",
+            "K": "#1F4D26"
+          },
+          "solution": [
+            "..........",
+            "...GGGG.G.",
+            "..GKKKKGG.",
+            ".GKGKKGKG.",
+            ".GKKKKKKG.",
+            ".GKKKKKKG.",
+            ".GKGKKGKG.",
+            "..GKKKKG..",
+            "...G..G...",
+            ".........."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pelagic",
+      "targetPuzzleCount": 4,
+      "puzzles": [
+        {
+          "id": 9,
+          "name": "Dolphin",
+          "size": 15,
+          "funFact": "Dolphins call each other by name. Each dolphin develops a unique signature whistle that other members of the pod use to address it.",
+          "palette": {
+            "B": "#5A8BB8",
+            "W": "#E8EEF2",
+            "K": "#1A2733"
+          },
+          "solution": [
+            "...............",
+            ".....BB........",
+            "....BBB........",
+            "...BBBB........",
+            "..BBBBBBBBBB...",
+            ".BBBBBBBBBBBB..",
+            "BBBBKBBBBBBBBB.",
+            "BBBWWWWWWWBBBBB",
+            ".BWWWWWWWWWBBB.",
+            "..WWWWWWWWBB...",
+            "...............",
+            "...............",
+            "...............",
+            "...............",
+            "..............."
+          ]
+        },
+        {
+          "id": 10,
+          "name": "Orca",
+          "size": 15,
+          "funFact": "Orcas, or killer whales, are actually the largest member of the dolphin family, and different pods speak distinct dialects of clicks and calls.",
+          "palette": {
+            "K": "#0F1418",
+            "W": "#F2F4F5",
+            "G": "#6B7378"
+          },
+          "solution": [
+            "...............",
+            ".......K.......",
+            "......KKK......",
+            "......KKK......",
+            ".KKKKKKKKKK....",
+            "KKKKKKKKKKKKK..",
+            "KKWKKKKKKKKKKKK",
+            "KKKKKKWWWWWKKKK",
+            "KKKKKWWWWWWWKK.",
+            ".KKKWWWWWWWKK..",
+            "..KKKWWWWWKKK..",
+            "....KKKKKKK....",
+            "......G.G......",
+            "...............",
+            "..............."
+          ]
+        },
+        {
+          "id": 11,
+          "name": "Manta Ray",
+          "size": 15,
+          "funFact": "Manta rays have the largest brain-to-body ratio of any fish and can recognize themselves in a mirror, a sign of self-awareness.",
+          "palette": {
+            "D": "#2C3E50",
+            "W": "#ECF0F1",
+            "K": "#0B0F14"
+          },
+          "solution": [
+            "...............",
+            "....D.....D....",
+            "...DD.....DD...",
+            "..DDDD...DDDD..",
+            ".DDDDDDDDDDDDD.",
+            "DDDDDDDDDDDDDDD",
+            "DDDDDDDDDDDDDDD",
+            "DDDDDKWWWKDDDDD",
+            "DDDDDWWWWWDDDDD",
+            ".DDDDDDDDDDDDD.",
+            "..DDDDDDDDDDD..",
+            "....DDDDDDD....",
+            "......DDD......",
+            ".......D.......",
+            "..............."
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Sailfish",
+          "size": 15,
+          "funFact": "Sailfish are among the fastest fish in the ocean, clocked at over 60 miles per hour, and they raise their huge dorsal sail to herd schools of prey.",
+          "palette": {
+            "B": "#1F6FB2",
+            "S": "#7BB8E0",
+            "K": "#0E2A3F"
+          },
+          "solution": [
+            "....SSSSS......",
+            "...SSSSSSS.....",
+            "..SSSSSSSSS....",
+            "..SSSSSSSSS....",
+            "...SSSSSSS.....",
+            "....BBBBB......",
+            "K...BBBBB......",
+            "KKBBBBBBBBBBBB.",
+            "KBBBBKBBBBBBBBB",
+            "KKBBBBBBBBBBBB.",
+            "K...BBBBB......",
+            "....BBBBB......",
+            "....B...B......",
+            "...B.....B.....",
+            "...B.....B....."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Abyssal",
+      "targetPuzzleCount": 8,
+      "puzzles": [
+        {
+          "id": 13,
+          "name": "Anglerfish",
+          "size": 20,
+          "funFact": "Female anglerfish dangle a bioluminescent lure called an esca to attract prey, and in some species the tiny male permanently fuses to her body to mate.",
+          "palette": {
+            "K": "#1A1A1A",
+            "Y": "#F4D35E",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "....................",
+            "..........Y.........",
+            ".........Y..........",
+            "........K...........",
+            "........K...........",
+            "........K...........",
+            "........K...........",
+            "....KKKKKKKKKK......",
+            "...KKKKKKKKKKKK.....",
+            "..KKKKWKKKKKKKKK....",
+            ".KKKWWWKKKKKKKKKK...",
+            ".KKWWWKKKKKKKKKKK...",
+            "KKKKKWKKKWKWKWKWKK..",
+            "KKKKKKKKKWKWKWKWK...",
+            ".KKKKKKKKKKKKKKK....",
+            "..KKKKKKKKKKKKK.....",
+            "...KKKKKKKKKK.......",
+            ".....KKKKKK.........",
+            "....................",
+            "...................."
+          ]
+        },
+        {
+          "id": 14,
+          "name": "Giant Squid",
+          "size": 20,
+          "funFact": "The giant squid has the largest eyes of any animal on Earth, roughly the size of a dinner plate, to detect faint light in the deep sea.",
+          "palette": {
+            "R": "#A23B3B",
+            "W": "#F2E8E0",
+            "K": "#2A1010"
+          },
+          "solution": [
+            ".......RRRRRR.......",
+            "......RRRRRRRR......",
+            ".....RRRRRRRRRR.....",
+            ".....RRRRRRRRRR.....",
+            "....RRRWRRRRWRRR....",
+            "....RRRKRRRRKRRR....",
+            ".....RRRRRRRRRR.....",
+            "......RRRRRRRR......",
+            "......RRRRRRRR......",
+            ".....RRRRRRRRRR.....",
+            "....R.RRRRRRRR.R....",
+            "...R.R.RRRRRR.R.R...",
+            "..R.R.R.RRRR.R.R.R..",
+            ".R.R.R.R.RR.R.R.R.R.",
+            "R.R.R.R.R..R.R.R.R.R",
+            ".R.R.R.R....R.R.R.R.",
+            "R.R.R.R......R.R.R.R",
+            ".R.R.R........R.R.R.",
+            "..R.R..........R.R..",
+            "...R............R..."
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Viperfish",
+          "size": 20,
+          "funFact": "Viperfish have fangs so long they cannot close their mouths, and they use a glowing lure on their dorsal fin to attract prey in pitch-black water.",
+          "palette": {
+            "K": "#1B1B22",
+            "S": "#6E7A82",
+            "W": "#FFFFFF",
+            "Y": "#F4D35E"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "............Y.......",
+            "...........YY.......",
+            "..........YYY.......",
+            "...........SS.......",
+            "...........SS.......",
+            "..........SSSSS.....",
+            ".......SSSSSSSSSS...",
+            "....SSSSSWSSSSSSSS..",
+            "..SSSSSSSSSSSSSSSSSS",
+            "SSSSWWWWSSSSSSSSSSSS",
+            "..SSWWWWSSSSSSSSSS..",
+            "....WSSSSSSSSSSSS...",
+            "....WSSSSSSSSSS.....",
+            "...W.SSSSSSSS.......",
+            "..W...SSSSS.........",
+            ".W..................",
+            "W...................",
+            "...................."
+          ]
+        },
+        {
+          "id": 16,
+          "name": "Hatchetfish",
+          "size": 20,
+          "funFact": "Hatchetfish have rows of light organs along their bellies that match the dim glow from above, hiding their silhouette from predators looking up.",
+          "palette": {
+            "S": "#B5C2C9",
+            "K": "#1F252B",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            ".........SS.........",
+            "........SSSS........",
+            ".......SSSSSS.......",
+            "......SSSSSSSS......",
+            ".....SSSSSSSSSS.....",
+            "....SSSSSSSSSSSS....",
+            "...SSSSKKSSKKSSSS...",
+            "..SSSSSSKSSSKSSSSS..",
+            ".SSSSSSSSSSSSSSSSSS.",
+            "SSSSSSSSSSSSSSSSSSSS",
+            "SSSSSSSSSSSSSSSSSSSS",
+            ".SSSSSSSSSSSSSSSSSS.",
+            "..SSSSSSSSSSSSSSSS..",
+            "...WSWSWSWSWSWSWS...",
+            "....SSSSSSSSSSSS....",
+            ".....SSSSSSSSSS.....",
+            "......SSSSSSSS......",
+            "........SSSS........"
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Dumbo Octopus",
+          "size": 20,
+          "funFact": "The dumbo octopus is named for the ear-like fins on its head and lives deeper than almost any other octopus, sometimes below 13,000 feet.",
+          "palette": {
+            "P": "#D98AA8",
+            "K": "#2A1A22",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "....PP........PP....",
+            "...PPPP......PPPP...",
+            "..PPPPPPPPPPPPPPPP..",
+            ".PPPPPPPPPPPPPPPPPP.",
+            "PPPPPPPPPPPPPPPPPPPP",
+            "PPPPPWKPPPPPPPKWPPPP",
+            "PPPPWWKPPPPPPPKWWPPP",
+            "PPPPPPPPPPPPPPPPPPPP",
+            ".PPPPPPPPPPPPPPPPPP.",
+            "..PPPPPPPPPPPPPPPP..",
+            "...PPPPPPPPPPPPPP...",
+            "....P.P.P.PP.P.P....",
+            "...P.P.P.PP..P.P....",
+            "..P.P.P.PP....P.P...",
+            ".P.P.P.PP......P.P..",
+            "P.P.P.PP........P.P.",
+            ".P.P.PP..........P..",
+            "..P..P.............."
+          ]
+        },
+        {
+          "id": 18,
+          "name": "Blue Whale",
+          "size": 20,
+          "funFact": "The blue whale is the largest animal ever known to have lived, and its heart alone can weigh as much as a small car.",
+          "palette": {
+            "B": "#3A6BA0",
+            "W": "#D8E2EC",
+            "K": "#15263A"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "..........BB........",
+            ".........BBBBB......",
+            "....BBBBBBBBBBBBBB..",
+            "...BBBBBBBBBBBBBBBB.",
+            "..BBBBBBBBBBBBBBBBBB",
+            ".BBBBBBBBBBBBBBBBBBB",
+            "BBBKBBBBBBBBBBBBBBBB",
+            "BWWWWWWWWWBBBBBBBBBB",
+            "WWWWWWWWWWWWWBBBBBB.",
+            "WWWWWWWWWWWWWBBBBB..",
+            ".WWWWWWWWWWWBBBB....",
+            "..WWWWWWWWWBBB......",
+            "....................",
+            "....................",
+            "....................",
+            "....................",
+            "....................",
+            "...................."
+          ]
+        },
+        {
+          "id": 19,
+          "name": "Sperm Whale",
+          "size": 20,
+          "funFact": "The sperm whale has the largest brain on Earth and produces clicks loud enough to stun prey and travel for miles through the ocean.",
+          "palette": {
+            "G": "#5B6973",
+            "W": "#E0E6EB",
+            "K": "#1C242B"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "....................",
+            "....GGGGGGGGGGGG....",
+            "...GGGGGGGGGGGGGG...",
+            "..GGGGGGGGGGGGGGGG..",
+            ".GGGGGGGGGGGGGGGGGG.",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GKGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGG",
+            "GGWWWWWWWGGGGGGGGGGG",
+            ".WWWWWWWWWWWGGGGGGG.",
+            "..WWWWWWWWWWGGGGG...",
+            "....WWWWWWWWGGG.....",
+            ".......WW....G......",
+            "....................",
+            "....................",
+            "....................",
+            "...................."
+          ]
+        },
+        {
+          "id": 20,
+          "name": "Gulper Eel",
+          "size": 20,
+          "funFact": "The gulper eel has an enormous loose-hinged jaw that lets it swallow prey larger than itself, and its long whip-like tail tip glows pink in the dark.",
+          "palette": {
+            "K": "#1A1A22",
+            "P": "#E07AB5",
+            "W": "#FFFFFF"
+          },
+          "solution": [
+            "....................",
+            "....................",
+            "....................",
+            ".KKK................",
+            "KKKKKK..............",
+            "KKKKKKKK............",
+            "KKKKKKKKKK..........",
+            "KKKKKKKKKKKK........",
+            "KKKKKKKKKKKKK.......",
+            "KKWKKKKKKKKKKKK.....",
+            "KKKKKKKKKKKKKKKKK...",
+            "KKKKKKKKKKKKKKKKKK..",
+            "KKKKKKKKKKKKKKKKKKK.",
+            ".KKKKKKKKKKKKKKKKKK.",
+            "..KKKKKKKKKKKKKKKKK.",
+            "...KKKKKKKKKKKKKKK..",
+            "....KKKKKKKKKKKKK...",
+            ".....KKKKKKKKKK.....",
+            "............KKKKK...",
+            "...............KPP.."
+          ]
+        }
+      ]
+    }
+  ]
+}

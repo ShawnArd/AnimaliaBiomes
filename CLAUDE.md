@@ -19,7 +19,7 @@ The following are **design decisions** owned by the user. Surface concerns, prop
 
 - **Puzzle solutions** in `app/src/main/assets/puzzles/*.json` — the pixel art itself.
 - **Palette colors** chosen for any animal, even if contrast seems poor.
-- **Fun facts**, animal names, stage names ("Shores", "Shallows", "Depths", "Open Ocean").
+- **Fun facts**, animal names. **Stage names are scientific sub-biomes** — each biome's 4 stages are the recognized ecological sub-types (see "Biomes & sub-biomes" below).
 - **Game rules**: 3-strike reset, 75% stage unlock threshold, merged-clue rule (adjacent cells of any colors count as one clue), tap-to-fill / long-press-to-mark, no hint system, **no color picker** (player taps any cell; the game auto-fills with the correct color from the solution).
 - **Clue text color**: hint numbers around the grid stay **black** (`#212121`) for *all* puzzles regardless of palette. Don't tint clues to match palette colors. Filled cells use palette colors; clues do not.
 - **Minimum palette colors per puzzle size**:
@@ -38,6 +38,20 @@ If a change to any of the above seems necessary (e.g., a critique flags a real b
 Refactors, bug fixes, validation, error handling, tests, dependency upgrades, architecture restructuring as the codebase grows — proceed without hand-holding. Touch design only when explicitly invited.
 
 ---
+
+## Biomes & sub-biomes
+
+5 biomes shipped, each with 4 scientifically-grounded sub-biome stages. Stage index → grid size: 1=5×5, 2=10×10, 3=15×15, 4=20×20. Target puzzle counts: 4/4/4/8.
+
+| Biome | Stage 1 (5×5) | Stage 2 (10×10) | Stage 3 (15×15) | Stage 4 (20×20) |
+|---|---|---|---|---|
+| Aquatic | Intertidal | Neritic | Pelagic | Abyssal |
+| Grassland | Pampas | Steppe | Prairie | Savanna |
+| Forest | Taiga | Temperate Deciduous | Temperate Coniferous | Tropical Rainforest |
+| Desert | Semi-Arid | Coastal Desert | Hot and Dry | Cold Desert |
+| Tundra | Alpine | Subarctic | Arctic | Polar Sea Ice |
+
+Sub-biome stages are conceptual containers. Animals slot into whichever stage matches their actual habitat. The size-per-stage rule (5/10/15/20 by index) creates the difficulty curve independent of the sub-biome's scientific identity.
 
 ## Project context
 
