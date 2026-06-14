@@ -1,0 +1,99 @@
+name: Keep Active
+
+on:
+  schedule:
+    # Cron is UTC. These windows cover 10am-11pm America/New_York
+    # year-round (covers both EST UTC-5 and EDT UTC-4).
+    - cron: '0 14-23 * * *'  # 14:00-23:00 UTC
+    - cron: '0 0-4 * * *'    # 00:00-04:00 UTC (covers ET evening past midnight UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: keep-active
+  cancel-in-progress: false
+
+jobs:
+  maybe-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Decide and commit
+        env:
+          FORCE: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          set -euo pipefail
+
+          export TZ="America/New_York"
+          DOW=$(date +%u)   # 1=Mon ... 7=Sun
+          HOUR=$(date +%H)  # 00-23
+          # Strip leading zero so arithmetic works
+          HOUR=$((10#$HOUR))
+
+          echo "ET day-of-week: $DOW, hour: $HOUR"
+
+          PROB=0
+          WINDOW=""
+          if [ "$DOW" -ge 6 ]; then
+            if [ "$HOUR" -ge 10 ] && [ "$HOUR" -le 22 ]; then
+              PROB=25
+              WINDOW="weekend"
+            fi
+          else
+            if [ "$HOUR" -ge 18 ] && [ "$HOUR" -le 23 ]; then
+              PROB=10
+              WINDOW="weekday-evening"
+            fi
+          fi
+
+          if [ "$FORCE" = "true" ]; then
+            echo "Manual dispatch -> forcing commit"
+            PROB=100
+            WINDOW="${WINDOW:-manual}"
+          fi
+
+          if [ "$PROB" -eq 0 ]; then
+            echo "Outside active window, skipping"
+            exit 0
+          fi
+
+          ROLL=$((RANDOM % 100))
+          echo "Window: $WINDOW, roll: $ROLL, threshold: $PROB"
+          if [ "$ROLL" -ge "$PROB" ]; then
+            echo "Didn't roll under threshold, skipping"
+            exit 0
+          fi
+
+          # Random jitter 0-30 min so commit time isn't always on the hour.
+          # Skip jitter on manual dispatch so smoke tests are fast.
+          if [ "$FORCE" != "true" ]; then
+            SLEEP=$((RANDOM % 1800))
+            echo "Sleeping ${SLEEP}s before committing"
+            sleep "$SLEEP"
+          fi
+
+          MESSAGES=(
+            "wip"
+            "checkpoint"
+            "scratch"
+            "notes"
+            "save progress"
+            "tweaks"
+            "cleanup"
+            "wip: notes"
+            "draft"
+            "minor"
+            "housekeeping"
+          )
+          MSG="${MESSAGES[$((RANDOM % ${#MESSAGES[@]}))]}"
+
+          git config user.name "Shawn"
+          git config user.email "shawnduncanard@gmail.com"
+
+          git commit --allow-empty -m "$MSG"
+          git push
